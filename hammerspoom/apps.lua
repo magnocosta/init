@@ -1,31 +1,32 @@
 
 local app_manager = { "cmd", "alt", "ctrl" }
 
-hs.hotkey.bind(app_manager, "C", function()
-  hs.application.launchOrFocus("Google Chrome")
-end)
+local shortcuts = {
+  { shortcut = "Q", command = "Spark" },
+  { shortcut = "W", command = "WhatsApp" },
+  { shortcut = "E", command = "Slack" },
+  { shortcut = "R", command = "MIcrosoft Teams" },
 
-hs.hotkey.bind(app_manager, "S", function()
-  hs.application.launchOrFocus("Sublime Text")
-end)
 
-hs.hotkey.bind(app_manager, "T", function()
-  hs.application.launchOrFocus("iTerm")
-end)
+  { shortcut = "P", command = "iTerm" },
+  { shortcut = "O", command = "Sublime Text" },
 
-hs.hotkey.bind(app_manager, "K", function()
-  hs.application.launchOrFocus("Slack")
-end)
+  { shortcut = "M", command = "Google Chrome" },
+  { shortcut = "N", command = "Firefox" },
+  { shortcut = "B", command = "Safari" }
 
-hs.hotkey.bind(app_manager, "W", function()
-  hs.application.launchOrFocus("WhatsApp")
-end)
+}
 
-hs.hotkey.bind(app_manager, "R", function()
-  hs.application.launchOrFocus("Spark")
-end)
+local shortcuts_help = ""
 
-hs.hotkey.bind(app_manager, "E", function()
-  hs.application.launchOrFocus("Microsoft Teams")
+for k, v in ipairs(shortcuts) do
+  hs.hotkey.bind(app_manager, v.shortcut, function()
+    hs.application.launchOrFocus(v.command)
+  end)
+  shortcuts_help = shortcuts_help .. v.shortcut .. " - " .. v.command .. "\n"
+end
+
+hs.hotkey.bind(app_manager, "A", function()
+  hs.alert.show(shortcuts_help)
 end)
 
