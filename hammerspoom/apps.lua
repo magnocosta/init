@@ -14,8 +14,10 @@ local shortcuts = {
 
   { shortcut = "M", command = "Google Chrome" },
   { shortcut = "N", command = "Firefox" },
-  { shortcut = "B", command = "Safari" }
+  { shortcut = "B", command = "Safari" },
 
+  { shortcut = "A", command = "Spotify" },
+  { shortcut = "S", command = "TweetDeck" }
 }
 
 local shortcuts_help = ""
@@ -27,7 +29,7 @@ for k, v in ipairs(shortcuts) do
   shortcuts_help = shortcuts_help .. v.shortcut .. " - " .. v.command .. "\n"
 end
 
-hs.hotkey.bind(app_manager, "A", function()
+hs.hotkey.bind(app_manager, "/", function()
   hs.alert.show(shortcuts_help)
 end)
 
