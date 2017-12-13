@@ -52,7 +52,21 @@ hs.hotkey.bind(app_manager, "C", function()
   for k, v in ipairs(shortcuts) do
     hs.alert.show("try kill: " .. v.command)
     app = hs.application.get(v.command)
-    app:kill()
+    app:kill9()
     hs.alert.show("Kill: " .. v.command)
   end
+end)
+
+switcher = nil
+
+hs.window.filter.default:subscribe(hs.window.filter.windowFocused, function()
+  switcher = hs.window.switcher.new(hs.window.focusedWindow():application():name())
+end)
+
+hs.hotkey.bind(app_manager, ".", function()
+  switcher:next()
+end)
+
+hs.hotkey.bind(app_manager, ",", function()
+  switcher:previous()
 end)
