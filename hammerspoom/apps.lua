@@ -9,7 +9,7 @@ local shortcuts = {
 
   { shortcut = "P", command = "iTerm" },
   { shortcut = "O", command = "Sublime Text" },
-  { shortcut = "I", command = "Postamn" },
+  { shortcut = "I", command = "Postman" },
   { shortcut = "U", command = "Dash" },
 
   { shortcut = "M", command = "Google Chrome" },
