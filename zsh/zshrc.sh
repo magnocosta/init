@@ -93,8 +93,8 @@ source $ZSH/oh-my-zsh.sh
 
 export MAVEN_HOME="/Users/magnocosta/Dev/tools/apache-maven-3.3.9"
 export PATH="$PATH:$MAVEN_HOME/bin"
-export m4u_artifactory_user=magno.costa
-export m4u_artifactory_password=AP87mKeEPR4Ajx5qgRTL1qtVGBV
+export m4u_artifactory_user=
+export m4u_artifactory_password=
 
 export ANDROID_HOME="/Users/magnocosta/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/25.0.2"
