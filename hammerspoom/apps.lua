@@ -6,6 +6,7 @@ local shortcuts = {
   { shortcut = "W", command = "WhatsApp" },
   { shortcut = "E", command = "Slack" },
   { shortcut = "R", command = "MIcrosoft Teams" },
+  { shortcut = "T", command = "Discord" },
 
   { shortcut = "P", command = "iTerm" },
   { shortcut = "O", command = "Sublime Text" },
