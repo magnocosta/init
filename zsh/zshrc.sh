@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/magnocosta/.oh-my-zsh
+export ZSH=$(PWD)/.oh-my-zsh
+#export ZSH=/Users/magnocosta/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -91,15 +92,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export MAVEN_HOME="/Users/magnocosta/Dev/tools/apache-maven-3.3.9"
-export PATH="$PATH:$MAVEN_HOME/bin"
-export m4u_artifactory_user=
-export m4u_artifactory_password=
-
-export ANDROID_HOME="/Users/magnocosta/Library/Android/sdk"
-export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/25.0.2"
-
-source /Users/magnocosta/Dev/puppet-ambiente-dev/apps/lio-scripts-shell/utils.sh
 export PATH="/usr/local/bin:$PATH"
-
 export PATH="/usr/local/sbin:$PATH"
