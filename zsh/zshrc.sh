@@ -1,12 +1,12 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$(PWD)/.oh-my-zsh
-#export ZSH=/Users/magnocosta/.oh-my-zsh
+#export ZSH=$(PWD)/.oh-my-zsh
+export ZSH=/Users/magnocosta/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -94,3 +94,9 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export DEFAULT_USER=magnocosta
+export ANDROID_HOME="/Users/magnocosta/Library/Android/sdk"
+
+export SDKMAN_DIR="/Users/magnocosta/.sdkman"
+[[ -s "/Users/magnocosta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/magnocosta/.sdkman/bin/sdkman-init.sh"
+# source ./utils.sh
