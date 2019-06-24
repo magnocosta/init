@@ -52,6 +52,7 @@ set scs          "Se a primeira letra for maiuscula, ele passa a considerar o ca
 set nobackup
 set noswapfile
 set nowritebackup
+set backspace=indent,eol,start
 
 "==================================================================================
 " Configurando outras coisas
@@ -111,7 +112,6 @@ nnoremap <leader>e :tabedit
 nnoremap <leader>c :tabclose<cr>
 nnoremap <leader>n :tabnext<cr>
 nnoremap <leader>p :tabprevious<cr>
-
 
 "==================================================================================
 " Configurando Fugitive atalhos
