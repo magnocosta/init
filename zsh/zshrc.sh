@@ -97,6 +97,8 @@ export PATH="/usr/local/sbin:$PATH"
 export DEFAULT_USER=magnocosta
 export ANDROID_HOME="/Users/magnocosta/Library/Android/sdk"
 
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+
 export SDKMAN_DIR="/Users/magnocosta/.sdkman"
 [[ -s "/Users/magnocosta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/magnocosta/.sdkman/bin/sdkman-init.sh"
 # source ./utils.sh
