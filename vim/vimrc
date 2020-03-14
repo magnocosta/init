@@ -57,11 +57,12 @@ set backspace=indent,eol,start
 "==================================================================================
 " Configurando outras coisas
 "==================================================================================
-set number       "Exibe o numero de cada linha
+set number relativenumber       "Exibe o numero de cada linha
 set title        "No titulo da janela exibe o nome do arquivo aberto
 syntax on        "Habilita sintaxe colorida
 colorscheme vividchalk "Define um schema de cores
 set mouse=nvi    "Habilitando o uso do mouse
+set encoding=UTF-8
 
 "==================================================================================
 " Configurando o plugin NERDTREE
