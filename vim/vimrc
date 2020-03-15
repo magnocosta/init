@@ -26,6 +26,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'elzr/vim-json'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'benmills/vimux'
 
 "==================================================================================
 " Configurando a identação do editor
@@ -83,7 +84,7 @@ set wildignore+=*/tmp/*,*/bin/*,*/coverage/*,*/log/*,*/public/uploads/*
 map <C-l> :set cursorcolumn!<Bar>set cursorline!<CR>
 
 "==================================================================================
-" Configurando o plugin POWERLINE
+" configurando o plugin powerline
 "==================================================================================
 set laststatus=2
 let g:airline_powerline_fonts=1
@@ -102,6 +103,11 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.slim set filetype=slim
 autocmd BufRead,BufNewFile Dockerfile set filetype=dockerfile
+
+"==================================================================================
+" Configurando o plugin Vimux
+"==================================================================================
+let g:VimuxOrientation = "v"
 
 "==================================================================================
 " Configurando a navegacao em tab
@@ -145,3 +151,10 @@ nnoremap <leader>s :Ack
 "==================================================================================
 :nmap <silent> <leader>d <Plug>DashSearch
 
+"==================================================================================
+" Configurando Vimux atalhos
+"==================================================================================
+map <Leader>vr :call VimuxRunCommand("docker-compose up")<CR>
+map <Leader>vt :call VimuxRunCommand("docker-compose run api rspec")<CR>
+map <Leader>vc :call VimuxCloseRunner()<CR>
+map <Leader>vp :call VimuxPromptCommand(“docker-compose run api ”)<CR>
