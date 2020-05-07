@@ -3,6 +3,8 @@
 " Vundle é um plugin que gerencia a instalação de novos plugins no vim
 "==================================================================================
 set nocompatible
+set showcmd
+set timeoutlen=1000 ttimeoutlen=0
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
