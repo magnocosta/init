@@ -2,25 +2,31 @@
 " Configurando o Vundle
 " Vundle é um plugin que gerencia a instalação de novos plugins no vim
 "==================================================================================
-set nocompatible
-set showcmd
-set timeoutlen=1000 ttimeoutlen=0
+
+set nocompatible                  "Recomendado pra evitar problemas
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 filetype plugin indent on
 
+"==================================================================================
+" Instaland os meus plugins oficiais
+"==================================================================================
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
+
+"==================================================================================
+" Instalando os meus plugins em experimento
+"==================================================================================
 Bundle 'tomtom/tcomment_vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
-Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
@@ -33,19 +39,17 @@ Plugin 'benmills/vimux'
 "==================================================================================
 " Configurando a identação do editor
 "==================================================================================
-set ai           "Auto-identação
+set autoindent   "Auto-identação
 set expandtab    "Criar espaco ano lugar da tabulação
 set shiftwidth=2 "Cria 2 espaçoes na tabulação
 set tabstop=2    "Altera largura da tabulação
-set sm           "Mostra o inicio de um bloco recem fechado
 
 "==================================================================================
 " Configurando as buscas
 "==================================================================================
-set is           "A cada caractere digitado, a busca automaticamente é incrementada
-set hls          "Destaca as palavras encontradas
-set ic           "Ignora case das letras (maiusculos e minusculos)
-set scs          "Se a primeira letra for maiuscula, ele passa a considerar o case (maiusculos e minuscolos)
+set incsearch    "A cada caractere digitado, a busca automaticamente é incrementada
+set ignorecase   "Ignora case das letras (maiusculos e minusculos)
+set smartcase    "Se a primeira letra for maiuscula, ele passa a considerar o case (maiusculos e minuscolos)
 
 "==================================================================================
 " Configurando para desabilitar os backups
@@ -60,12 +64,15 @@ set backspace=indent,eol,start
 "==================================================================================
 " Configurando outras coisas
 "==================================================================================
-set number relativenumber       "Exibe o numero de cada linha
-set title        "No titulo da janela exibe o nome do arquivo aberto
-syntax on        "Habilita sintaxe colorida
-colorscheme vividchalk "Define um schema de cores
-set mouse=nvi    "Habilitando o uso do mouse
-set encoding=UTF-8
+set number relativenumber         "Exibe o numero de cada linha
+set title                         "No titulo da janela exibe o nome do arquivo aberto
+syntax on                         "Habilita sintaxe colorida
+colorscheme vividchalk            "Define um schema de cores
+set mouse=nvi                     "Habilitando o uso do mouse
+set encoding=UTF-8                "Define um encode padrao para todos os arquivos 
+
+set showcmd                       "Exibe os comandos ainda nao terminados
+set timeoutlen=1000 ttimeoutlen=0 "Desliga o delay ao voltar par o normal mode
 
 "==================================================================================
 " Configurando o plugin NERDTREE
