@@ -35,6 +35,7 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'elzr/vim-json'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'benmills/vimux'
+Plugin 'miyakogi/conoline.vim'
 
 "==================================================================================
 " Configurando a identação do editor
@@ -70,9 +71,9 @@ syntax on                         "Habilita sintaxe colorida
 colorscheme vividchalk            "Define um schema de cores
 set mouse=nvi                     "Habilitando o uso do mouse
 set encoding=UTF-8                "Define um encode padrao para todos os arquivos 
-
 set showcmd                       "Exibe os comandos ainda nao terminados
 set timeoutlen=1000 ttimeoutlen=0 "Desliga o delay ao voltar par o normal mode
+"set spell spelllang=pt            "Dicionário em portugues usando o dicionario na pasta spell
 
 "==================================================================================
 " Configurando o plugin NERDTREE
@@ -90,7 +91,7 @@ set wildignore+=*/tmp/*,*/bin/*,*/coverage/*,*/log/*,*/public/uploads/*
 "==================================================================================
 " Configurando Atalhos
 "==================================================================================
-map <C-l> :set cursorcolumn!<Bar>set cursorline!<CR>
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 "==================================================================================
 " configurando o plugin powerline
@@ -167,3 +168,4 @@ map <Leader>vr :call VimuxRunCommand("docker-compose up")<CR>
 map <Leader>vt :call VimuxRunCommand("docker-compose run api rspec")<CR>
 map <Leader>vc :call VimuxCloseRunner()<CR>
 map <Leader>vp :call VimuxPromptCommand(“docker-compose run api ”)<CR>
+
