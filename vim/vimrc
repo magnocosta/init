@@ -37,6 +37,63 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'benmills/vimux'
 Plugin 'miyakogi/conoline.vim'
 
+let mapleader="\<Space>"
+
+"==================================================================================
+" Configurando o plugin NERDTREE
+"==================================================================================
+map <C-n> :NERDTreeToggle<CR>
+map <C-f> :NERDTreeFind<CR>
+
+"==================================================================================
+" Configurando o plugin CTRLP
+"==================================================================================
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+set wildignore+=*/tmp/*,*/bin/*,*/coverage/*,*/log/*,*/public/uploads/* 
+
+"==================================================================================
+" Configurando o plugin Fugitive
+"==================================================================================
+nnoremap <leader>gd :Gvdiff<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>ga :Gadd<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>ge :Gedit<cr>
+nnoremap <leader>gm :Gmove
+nnoremap <leader>gr :Gread<cr>
+nnoremap <leader>grm :Gremove<cr>
+nnoremap <leader>gp :Git push
+
+"==================================================================================
+" Configurando o plugin Powerline
+"==================================================================================
+set laststatus=2
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#buffer_min_count=2
+let g:airline#extensions#tabline#tab_min_count=2
+set t_Co=256
+
+"==================================================================================
+" Configurando o plugin Vimux
+"==================================================================================
+let g:VimuxOrientation = "v"
+
+"==================================================================================
+" Configurando o plugin Indent Guides
+"==================================================================================
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+
+"==================================================================================
+" Configurando o plugin Vimux
+"==================================================================================
+map <Leader>vr :call VimuxRunCommand("docker-compose up")<CR>
+map <Leader>vt :call VimuxRunCommand("docker-compose run api rspec")<CR>
+map <Leader>vc :call VimuxCloseRunner()<CR>
+map <Leader>vp :call VimuxPromptCommand(“docker-compose run api ”)<CR>
+
 "==================================================================================
 " Configurando a identação do editor
 "==================================================================================
@@ -69,39 +126,12 @@ set number relativenumber         "Exibe o numero de cada linha
 set title                         "No titulo da janela exibe o nome do arquivo aberto
 syntax on                         "Habilita sintaxe colorida
 colorscheme vividchalk            "Define um schema de cores
-set mouse=nvi                     "Habilitando o uso do mouse
+set mouse=a                       "Habilitando o uso do mouse
 set encoding=UTF-8                "Define um encode padrao para todos os arquivos 
 set showcmd                       "Exibe os comandos ainda nao terminados
 set timeoutlen=1000 ttimeoutlen=0 "Desliga o delay ao voltar par o normal mode
+set hidden
 "set spell spelllang=pt            "Dicionário em portugues usando o dicionario na pasta spell
-
-"==================================================================================
-" Configurando o plugin NERDTREE
-"==================================================================================
-" Atalho para habilitar ou desabilitar plugin com: CTRL + N
-map <C-n> :NERDTreeToggle<CR>
-map <C-f> :NERDTreeFind<CR>
-
-"==================================================================================
-" Configurando o plugin CTRLP
-"==================================================================================
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*/tmp/*,*/bin/*,*/coverage/*,*/log/*,*/public/uploads/* 
-
-"==================================================================================
-" Configurando Atalhos
-"==================================================================================
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
-
-"==================================================================================
-" configurando o plugin powerline
-"==================================================================================
-set laststatus=2
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#buffer_min_count=2
-let g:airline#extensions#tabline#tab_min_count=2
-set t_Co=256
 
 "==================================================================================
 " Configurando o filetype
@@ -115,57 +145,19 @@ autocmd BufRead,BufNewFile *.slim set filetype=slim
 autocmd BufRead,BufNewFile Dockerfile set filetype=dockerfile
 
 "==================================================================================
-" Configurando o plugin Vimux
+" Configurando Atalhos Nativos
 "==================================================================================
-let g:VimuxOrientation = "v"
+nnoremap <leader>f gg=G<cr>
+nnoremap <leader>a :Ack 
+nnoremap <leader>s :%s/
+nnoremap <leader>cvi :edit ~/.vim/vimrc<CR>
+nnoremap <leader>rvi :source ~/.vim/vimrc<CR>
 
 "==================================================================================
 " Configurando a navegacao em tab
 "==================================================================================
-set hidden
-let mapleader = ","
 nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>e :tabedit
 nnoremap <leader>c :tabclose<cr>
 nnoremap <leader>n :tabnext<cr>
 nnoremap <leader>p :tabprevious<cr>
-
-"==================================================================================
-" Configurando Fugitive atalhos
-"==================================================================================
-nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gw :Gwrite<cr>
-nnoremap <leader>ga :Gadd<cr>
-nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>gc :Gcommit<cr>
-nnoremap <leader>ge :Gedit<cr>
-nnoremap <leader>gm :Gmove
-nnoremap <leader>gr :Gread<cr>
-nnoremap <leader>grm :Gremove<cr>
-nnoremap <leader>gp :Git push
-
-"==================================================================================
-" Configurando indent guides
-"==================================================================================
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-
-"==================================================================================
-" Outros Atalhos patra formatar codigo
-"==================================================================================
-nnoremap <leader>f gg=G<cr>
-nnoremap <leader>s :Ack 
-
-"==================================================================================
-" Configurando DashVim atalhos
-"==================================================================================
-:nmap <silent> <leader>d <Plug>DashSearch
-
-"==================================================================================
-" Configurando Vimux atalhos
-"==================================================================================
-map <Leader>vr :call VimuxRunCommand("docker-compose up")<CR>
-map <Leader>vt :call VimuxRunCommand("docker-compose run api rspec")<CR>
-map <Leader>vc :call VimuxCloseRunner()<CR>
-map <Leader>vp :call VimuxPromptCommand(“docker-compose run api ”)<CR>
-
