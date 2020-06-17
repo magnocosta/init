@@ -1,5 +1,5 @@
 require "auto_reload"
+require "auto_deploy"
 require "apps"
 require "windows"
 require "spaces"
-require "keyboards"

@@ -1,44 +1,40 @@
-local spaces        = require("hs._asm.undocumented.spaces")
-local grid          = require("hs.grid")
-local window        = require("hs.window")
-local screen        = require("hs.screen")
-local hotkey        = require("hs.hotkey")
-local application   = require("hs.application")
-local alert         = require("hs.alert")
-local grid          = require("hs.grid")
+window_manager = { "cmd", "alt" }
+window_mana    = { "cmd", "alt", "ctrl" }
 
-local window_manager = { "cmd", "alt" }
-local window_mana    = { "cmd", "alt", "ctrl" }
+hs.window.animationDuration = 0
 
-window.animationDuration = 0
+hs.hotkey.bind(window_manager, "A", function()
+  expose = hs.expose.new()
+  expose:show()
+end)
 
-hotkey.bind(window_manager, "G", function()
+hs.hotkey.bind(window_manager, "G", function()
   splitScreenByCurrentWindows()
 end)
 
-hotkey.bind(window_manager, "F", function()
-  window.focusedWindow():maximize()
+hs.hotkey.bind(window_manager, "F", function()
+  hs.window.focusedWindow():maximize()
 end)
 
-hotkey.bind(window_manager, "L", function()
+hs.hotkey.bind(window_manager, "L", function()
   moveFocusedWindowToScreen('1,0')
 end)
 
-hotkey.bind(window_manager, "H", function()
+hs.hotkey.bind(window_manager, "H", function()
   moveFocusedWindowToScreen('0,0')
 end)
 
-hotkey.bind(window_mana, "L", function()
+hs.hotkey.bind(window_mana, "L", function()
   moveAllAppsToScreen('1,0')
 end)
 
-hotkey.bind(window_mana, "H", function()
+hs.hotkey.bind(window_mana, "H", function()
   moveAllAppsToScreen('0,0')
 end)
 
 function moveAllAppsToScreen(target)
-  local currentScreen = screen(target)
-  for _,app in ipairs(application.runningApplications()) do
+  currentScreen = hs.screen(target)
+  for _,app in ipairs(hs.application.runningApplications()) do
     for _,w in ipairs(app:allWindows()) do 
       w:moveToScreen(currentScreen)
     end
@@ -46,39 +42,35 @@ function moveAllAppsToScreen(target)
 end
 
 function moveFocusedWindowToScreen(target)
-  local currentScreen = screen(target)
-  local currentWindow = window.focusedWindow()
+  currentScreen = hs.screen(target)
+  currentWindow = hs.window.focusedWindow()
   currentWindow:moveToScreen(currentScreen)
 end
 
 function getWindowsByCurrentScreen()
+  currentWindow = hs.window.focusedWindow()
+  currentScreen = currentWindow:screen()
+  
+  windowsByCurrentScreen={}
+  windowsByCurrentScreen.size=0
+  windowsByCurrentScreen.items={}
 
-end
-
-function splitScreenByCurrentWindows()
-  local currentWindow = window.focusedWindow()
-  local currentScreen = currentWindow:screen()
-  local count  = 0
-  local windowsByCurrentScreen = {}
-
-  for _,app in ipairs(application.runningApplications()) do
+  for _,app in ipairs(hs.application.runningApplications()) do
     for _,w in ipairs(app:visibleWindows()) do 
       if w:screen() == currentScreen and  w:title() ~= "" then
-        count = count + 1
-        windowsByCurrentScreen[count] = w
-        -- alert.show(w:title())
+        windowsByCurrentScreen.items[windowsByCurrentScreen.size] = w
+        windowsByCurrentScreen.size = windowsByCurrentScreen.size + 1
       end
     end
   end
 
-  -- alert.show(count)
+  return windowsByCurrentScreen
+end
 
-  grid.setGrid(count..'x1')
-  count = 0
-  for _,w in ipairs(windowsByCurrentScreen) do 
-    local geo = hs.geometry:point('0,0')
-    grid.set(w, {x=count, y=1, w=1, h=1}, currentScreen)
-    count = count + 1
+function splitScreenByCurrentWindows()
+  windows = getWindowsByCurrentScreen()
+  hs.grid.setGrid(windows.size..'x1')
+  for i,w in pairs(windows.items) do 
+    hs.grid.set(w, {x=i, y=1, w=1, h=1}, hs.screen.mainScreen())
   end
-
 end

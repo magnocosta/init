@@ -49,7 +49,7 @@ local shortcuts = {
   { shortcut = "R", command = "Telegram" },
 
   { shortcut = "O", command = "Sublime Text" },
-  { shortcut = "A", command = "Spotify" },
+  { shortcut = "B", command = "Spotify" },
   { shortcut = "R", command = "TweetDeck" },
   { shortcut = "Z", command = "TogglDesktop" }
 }
