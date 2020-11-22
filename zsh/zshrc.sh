@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 #export ZSH=$(PWD)/.oh-my-zsh
 export ZSH=/Users/magnocosta/.oh-my-zsh
@@ -7,7 +14,7 @@ export EDITOR='vim'
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -57,7 +64,6 @@ plugins=(
   osx
   sprunge
   sublime
-  zsh-autosuggestions
   colored-man-pages
 )
 
@@ -95,11 +101,15 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export DEFAULT_USER=magnocosta
-export ANDROID_HOME="/Users/magnocosta/Library/Android/sdk"
-
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export DEFAULT_USER=$(whoami)
 
 export SDKMAN_DIR="/Users/magnocosta/.sdkman"
 [[ -s "/Users/magnocosta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/magnocosta/.sdkman/bin/sdkman-init.sh"
 # source ./utils.sh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
