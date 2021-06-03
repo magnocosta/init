@@ -1,33 +1,30 @@
-"==================================================================================
-" Configurando o Vundle
 " Vundle é um plugin que gerencia a instalação de novos plugins no vim
 "==================================================================================
 
 set nocompatible                  "Recomendado pra evitar problemas
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-filetype plugin indent on
+call vundle#begin()
 
 "==================================================================================
 " Instaland os meus plugins oficiais
 "==================================================================================
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'bling/vim-airline'
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 
 "==================================================================================
 " Instalando os meus plugins em experimento
 "==================================================================================
-Bundle 'tomtom/tcomment_vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'msanders/snipmate.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
-Bundle 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'slim-template/vim-slim'
@@ -36,7 +33,11 @@ Plugin 'elzr/vim-json'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'benmills/vimux'
 Plugin 'miyakogi/conoline.vim'
+Plugin 'pangloss/vim-javascript'
 
+call vundle#end()
+
+filetype plugin indent on
 let mapleader="\<Space>"
 
 "==================================================================================
@@ -126,21 +127,22 @@ set backspace=indent,eol,start
 set number relativenumber         "Exibe o numero de cada linha
 set title                         "No titulo da janela exibe o nome do arquivo aberto
 syntax on                         "Habilita sintaxe colorida
-colorscheme vividchalk            "Define um schema de cores
+colorscheme dracula               "Define um schema de cores
 set mouse=a                       "Habilitando o uso do mouse
 set encoding=UTF-8                "Define um encode padrao para todos os arquivos 
 set showcmd                       "Exibe os comandos ainda nao terminados
 set timeoutlen=1000 ttimeoutlen=0 "Desliga o delay ao voltar par o normal mode
 set hidden
-set foldmethod=syntax             "Liga o fold por sintaxe
-set foldlevelstart=1
-"set spell spelllang=pt            "Dicionário em portugues usando o dicionario na pasta spell
+set nofoldenable                  " disable folding
+" set foldmethod=syntax           " Liga o fold por sintaxe
+" set foldlevelstart=1
+"set spell spelllang=pt           " Dicionário em portugues usando o dicionario na pasta spell
 
 "==================================================================================
 " Configurando o filetype
 "==================================================================================
 autocmd BufNewFile,BufRead *.html.erb set filetype=html
-autocmd BufNewFile,BufRead *.js.* set filetype=js
+" autocmd BufNewFile,BufRead *.js set filetype=js
 autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.json set filetype=json
@@ -159,12 +161,16 @@ let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 hi Folded ctermbg=black
+
 "==================================================================================
 " Configurando Atalhos Nativos
 "==================================================================================
 nnoremap <leader>f gg=G<cr>
 nnoremap <leader>a :Ack 
 nnoremap <leader>s :%s/
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q!<CR>
+nnoremap <leader>wq :wq!<CR>
 nnoremap <leader>cvi :edit ~/.vim/vimrc<CR>
 nnoremap <leader>rvi :source ~/.vim/vimrc<CR>
 
