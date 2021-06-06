@@ -135,8 +135,8 @@ set showcmd                       "Exibe os comandos ainda nao terminados
 set timeoutlen=1000 ttimeoutlen=0 "Desliga o delay ao voltar par o normal mode
 set hidden
 set nofoldenable                  " disable folding
-" set foldmethod=syntax           " Liga o fold por sintaxe
-" set foldlevelstart=1
+set foldmethod=syntax           " Liga o fold por sintaxe
+set foldlevelstart=1
 "set spell spelllang=pt           " Dicionário em portugues usando o dicionario na pasta spell
 
 "==================================================================================
@@ -149,6 +149,7 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.slim set filetype=slim
 autocmd BufRead,BufNewFile Dockerfile set filetype=dockerfile
+autocmd BufRead,BufNewFile *.spec.js set foldlevel=3
 
 "==================================================================================
 " Configurando os folds por sintaxe
@@ -161,7 +162,6 @@ let ruby_fold=1               " Ruby
 let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
-hi Folded ctermbg=black
 
 "==================================================================================
 " Configurando Atalhos Nativos
