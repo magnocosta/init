@@ -142,3 +142,8 @@
 
 --regex-javascript=/^[ \t]\{1,\}\([A-Za-z0-9_$]\{1,\}\),$/\1/V,Variable,Variables/b
 --regex-javascript=/^[ \t]\{1,\}\([A-Za-z0-9_$]\{1,\}\)$/\1/V,Variable,Variables/b
+
+--exclude=node_modules
+--exclude=docs
+--exclude=.git
+
