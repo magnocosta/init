@@ -35,4 +35,4 @@ export SDKMAN_DIR="/Users/magnocosta/.sdkman"
 [[ -s "/Users/magnocosta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/magnocosta/.sdkman/bin/sdkman-init.sh"
 
 
-alias ctags_js=ln -s ~/.init/ctags/javascript/ctagsrc $(pwd)/.ctags
+alias ctags_js="ln -s ~/.init/ctags/javascript/ctagsrc $(pwd)/.ctags"
