@@ -57,14 +57,12 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tag)|(\.(swp|ico|gi
 "==================================================================================
 " Configurando o plugin Fugitive
 "==================================================================================
-nnoremap <leader>gd :Gvdiff<cr>
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gw :Gwrite<cr>
-nnoremap <leader>ga :Gadd<cr>
-nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gd :Gvdiffsplit<cr>
+nnoremap <leader>gs :Git<cr>
+nnoremap <leader>gb :Git blame<cr>
+nnoremap <leader>gc :Gi commit<cr>
 nnoremap <leader>ge :Gedit<cr>
-nnoremap <leader>gm :Gmove
+nnoremap <leader>gm :GMove
 nnoremap <leader>gr :Gread<cr>
 nnoremap <leader>grm :Gremove<cr>
 nnoremap <leader>gp :Git push
