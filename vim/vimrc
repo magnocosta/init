@@ -1,4 +1,4 @@
-" Vundle é um plugin que gerencia a instalação de novos plugins no vim
+"vVundle é um plugin que gerencia a instalação de novos plugins no vim
 "==================================================================================
 
 set nocompatible                  "Recomendado pra evitar problemas
@@ -27,6 +27,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'slim-template/vim-slim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'elzr/vim-json'
@@ -35,10 +36,13 @@ Plugin 'benmills/vimux'
 Plugin 'miyakogi/conoline.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'hashivim/vim-terraform'
 
 call vundle#end()
 
+filetype on
 filetype plugin indent on
+filetype plugin on
 let mapleader="\<Space>"
 
 "==================================================================================
@@ -52,6 +56,7 @@ map <C-f> :NERDTreeFind<CR>
 "==================================================================================
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*/bin/*,*/coverage/*,*/log/*,*/public/uploads/* 
+set splitright
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tag)|(\.(swp|ico|git|svn))$'
 
 "==================================================================================
@@ -81,19 +86,15 @@ set t_Co=256
 " Configurando o plugin Vimux
 "==================================================================================
 let g:VimuxOrientation = "v"
+map <Leader>rc :call VimuxPromptCommand() <CR>
+map <Leader>rr :call VimuxRunLastCommand() <CR>
+map <Leader>rz :call VimuxZoomRunner() <CR>
+map <Leader>rq :call VimuxCloseRunner() <CR>
 
 "==================================================================================
 " Configurando o plugin Indent Guides
 "==================================================================================
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-
-"==================================================================================
-" Configurando o plugin Vimux
-"==================================================================================
-map <Leader>vr :call VimuxRunCommand("docker-compose up")<CR>
-map <Leader>vt :call VimuxRunCommand("docker-compose run api rspec")<CR>
-map <Leader>vc :call VimuxCloseRunner()<CR>
-map <Leader>vp :call VimuxPromptCommand(“docker-compose run api ”)<CR>
 
 "==================================================================================
 " Configurando a identação do editor
@@ -127,15 +128,20 @@ set number relativenumber         "Exibe o numero de cada linha
 set title                         "No titulo da janela exibe o nome do arquivo aberto
 syntax on                         "Habilita sintaxe colorida
 colorscheme dracula               "Define um schema de cores
+let g:dracula_colorterm = 0
+let g:dracula_italic = 0
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 set mouse=a                       "Habilitando o uso do mouse
 set encoding=UTF-8                "Define um encode padrao para todos os arquivos 
 set showcmd                       "Exibe os comandos ainda nao terminados
 set timeoutlen=1000 ttimeoutlen=0 "Desliga o delay ao voltar par o normal mode
 set hidden
 set nofoldenable                  " disable folding
-set foldmethod=syntax           " Liga o fold por sintaxe
+set foldmethod=indent            " Liga o fold por identacao
 set foldlevelstart=1
 "set spell spelllang=pt           " Dicionário em portugues usando o dicionario na pasta spell
+set autoread                      " Automaticamente detecta todas as mudancas nos arquivos
 
 "==================================================================================
 " Configurando o filetype
@@ -170,8 +176,8 @@ nnoremap <leader>s :%s/
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>wq :wq!<CR>
-nnoremap <leader>cvi :edit ~/.vim/vimrc<CR>
-nnoremap <leader>rvi :source ~/.vim/vimrc<CR>
+nnoremap <leader>ev :vsplit ~/.vim/vimrc<CR>
+nnoremap <leader>sv :source ~/.vim/vimrc<CR>
 
 "==================================================================================
 " Configurando a navegacao em tab
@@ -181,3 +187,9 @@ nnoremap <leader>e :tabedit
 nnoremap <leader>c :tabclose<cr>
 nnoremap <leader>n :tabnext<cr>
 nnoremap <leader>p :tabprevious<cr>
+
+"==================================================================================
+" Configurando a clipboard
+"==================================================================================
+map <C-c> "+y
+map <C-v> "+p
