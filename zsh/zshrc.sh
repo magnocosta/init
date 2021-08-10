@@ -36,3 +36,4 @@ export SDKMAN_DIR="/Users/magnocosta/.sdkman"
 
 
 alias ctags_js='ln -s ~/.init/ctags/javascript/ctagsrc "$(pwd)"/.ctags'
+alias ctags_terraform='ln -s ~/.init/ctags/terraform/ctagsrc "$(pwd)"/.ctags'

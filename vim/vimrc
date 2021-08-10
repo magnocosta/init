@@ -37,6 +37,7 @@ Plugin 'miyakogi/conoline.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'hashivim/vim-terraform'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
@@ -95,6 +96,11 @@ map <Leader>rq :call VimuxCloseRunner() <CR>
 " Configurando o plugin Indent Guides
 "==================================================================================
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+"
+"==================================================================================
+" Configurando o plugin Vim Terraform
+"==================================================================================
+let g:terraform_fmt_on_save=1 "Executa a format file do terraform no save
 
 "==================================================================================
 " Configurando a identação do editor
@@ -135,7 +141,7 @@ set showcmd                       "Exibe os comandos ainda nao terminados
 set timeoutlen=1000 ttimeoutlen=0 "Desliga o delay ao voltar par o normal mode
 set hidden
 set nofoldenable                  " disable folding
-set foldmethod=indent            " Liga o fold por identacao
+set foldmethod=syntax             " Liga o fold por sintaxe
 set foldlevelstart=1
 "set spell spelllang=pt           " Dicionário em portugues usando o dicionario na pasta spell
 set autoread                      " Automaticamente detecta todas as mudancas nos arquivos
