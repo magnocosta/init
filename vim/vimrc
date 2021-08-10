@@ -127,11 +127,8 @@ set backspace=indent,eol,start
 set number relativenumber         "Exibe o numero de cada linha
 set title                         "No titulo da janela exibe o nome do arquivo aberto
 syntax on                         "Habilita sintaxe colorida
-colorscheme dracula               "Define um schema de cores
-let g:dracula_colorterm = 0
 let g:dracula_italic = 0
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
+colorscheme dracula
 set mouse=a                       "Habilitando o uso do mouse
 set encoding=UTF-8                "Define um encode padrao para todos os arquivos 
 set showcmd                       "Exibe os comandos ainda nao terminados
