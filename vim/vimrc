@@ -38,6 +38,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'hashivim/vim-terraform'
 Plugin 'fatih/vim-go'
+Plugin 'ervandew/supertab'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 
@@ -106,10 +108,16 @@ let g:terraform_fmt_on_save=1 "Executa a format file do terraform no save
 " Configurando a identação do editor
 "==================================================================================
 set autoindent   "Auto-identação
-set expandtab    "Criar espaco ano lugar da tabulação
+set smartindent
+set smarttab
 set shiftwidth=2 "Cria 2 espaçoes na tabulação
+set softtabstop=2 "Cria 2 espaçoes na tabulação
 set tabstop=2    "Altera largura da tabulação
+set expandtab    "Criar espaco ano lugar da tabulação
+set linebreak
 
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
 "==================================================================================
 " Configurando as buscas
 "==================================================================================
@@ -125,12 +133,12 @@ set smartcase    "Se a primeira letra for maiuscula, ele passa a considerar o ca
 set nobackup
 set noswapfile
 set nowritebackup
-set backspace=indent,eol,start
+set backspace=indent,eol,start   "Libara o uso da tecla de espaço no modo insert
 
 "==================================================================================
 " Configurando outras coisas
 "==================================================================================
-set number relativenumber         "Exibe o numero de cada linha
+set number relativenumber         "Exibe o numero de cada linha de forma relativa
 set title                         "No titulo da janela exibe o nome do arquivo aberto
 syntax on                         "Habilita sintaxe colorida
 let g:dracula_italic = 0
@@ -144,7 +152,10 @@ set nofoldenable                  " disable folding
 set foldmethod=syntax             " Liga o fold por sintaxe
 set foldlevelstart=1
 "set spell spelllang=pt           " Dicionário em portugues usando o dicionario na pasta spell
-set autoread                      " Automaticamente detecta todas as mudancas nos arquivos
+set autoread                      " Automaticamente detecta todas as mudancas nos arquivos realizadas fora do vim
+set history=1000                  " Armazena 1000 itens no historico de comandos
+set visualbell                    " Desabilita o som das notificacoes
+
 
 "==================================================================================
 " Configurando o filetype
@@ -176,9 +187,6 @@ let xml_syntax_folding=1      " XML
 nnoremap <leader>f gg=G<cr>
 nnoremap <leader>a :Ack 
 nnoremap <leader>s :%s/
-nnoremap <leader>w :w<CR>
-nnoremap <leader>q :q!<CR>
-nnoremap <leader>wq :wq!<CR>
 nnoremap <leader>ev :vsplit ~/.vim/vimrc<CR>
 nnoremap <leader>sv :source ~/.vim/vimrc<CR>
 
@@ -194,5 +202,8 @@ nnoremap <leader>p :tabprevious<cr>
 "==================================================================================
 " Configurando a clipboard
 "==================================================================================
-map <C-c> "+y
-map <C-v> "+p
+" map <C-c> "+y
+" map <C-v> "+p
+noremap <leader>y "+y
+
+nnoremap <leader>. :CtrlPTag<cr>
