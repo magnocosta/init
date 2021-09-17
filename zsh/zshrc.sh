@@ -39,3 +39,26 @@ alias ctags_js='ln -s ~/.init/ctags/javascript/ctagsrc "$(pwd)"/.ctags'
 alias ctags_terraform='ln -s ~/.init/ctags/terraform/ctagsrc "$(pwd)"/.ctags'
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+start_tmux_project() {
+  parent=`basename $(dirname ${PWD})`
+  parent=${(C)parent}
+  parent=${parent//-/ }
+  
+  name=`basename ${PWD}`
+  name=${(C)name}
+  name=${name//-/ }
+  
+  session="$parent -> $name"
+
+  echo "$session"
+  echo `tmuxinator s -n "$session" -p ~/.tmuxinator.yml`
+}
+
+attach_tmux() {
+  echo `tmux attach #`
+}
+
+# alias mux='tmuxinator s -n "`basename $(pwd)`" -p ~/.tmuxinator.yml'
+alias s=start_tmux_project
+alias a=attach_tmux
