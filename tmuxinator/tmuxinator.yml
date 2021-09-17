@@ -1,0 +1,7 @@
+windows:
+  - main:
+      layout: main-vertical
+      panes:
+        - vim
+        - clear
+        - clear
