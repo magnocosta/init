@@ -8,7 +8,7 @@ export EDITOR='vim'
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
-  git 
+  git
   history
   osx
   sprunge
@@ -62,3 +62,8 @@ attach_tmux() {
 # alias mux='tmuxinator s -n "`basename $(pwd)`" -p ~/.tmuxinator.yml'
 alias s=start_tmux_project
 alias a=attach_tmux
+
+export GOPATH="$HOME/go"
+# export GOROOT="/usr/local/bin/"
+
+export PATH="$GOPATH/bin:$PATH"
