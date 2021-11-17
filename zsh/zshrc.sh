@@ -10,7 +10,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
   history
-  osx
+  macos
   sprunge
   sublime
   colored-man-pages
