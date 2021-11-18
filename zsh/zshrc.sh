@@ -8,7 +8,7 @@ export EDITOR='vim'
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
-  git 
+  git
   history
   osx
   sprunge
@@ -67,3 +67,4 @@ export GOPATH="$HOME/go"
 # export GOROOT="/usr/local/bin/"
 
 export PATH="$GOPATH/bin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
