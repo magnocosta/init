@@ -49,187 +49,191 @@ filetype plugin indent on
 filetype plugin on
 let mapleader="\<Space>"
 
-  "==================================================================================
-  " Configurando o plugin NERDTREE
-  "==================================================================================
-  let NERDTreeShowHidden=1
-  map <C-n> :NERDTreeToggle<CR>
-  map <C-f> :NERDTreeFind<CR>
+"==================================================================================
+" Configurando o plugin NERDTREE
+"==================================================================================
+let NERDTreeShowHidden=1
+map <C-n> :NERDTreeToggle<CR>
+map <C-f> :NERDTreeFind<CR>
 
-  "==================================================================================
-  " Configurando o plugin CTRLP
-  "==================================================================================
-  set runtimepath^=~/.vim/bundle/ctrlp.vim
-  set wildignore+=*/tmp/*,*/bin/*,*/coverage/*,*/log/*,*/public/uploads/* 
-  set splitright
-  let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tag)|(\.(swp|ico|git|svn))$'
+"==================================================================================
+" Configurando o plugin CTRLP
+"==================================================================================
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+set wildignore+=*/tmp/*,*/bin/*,*/coverage/*,*/log/*,*/public/uploads/* 
+set splitright
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tag)|(\.(swp|ico|git|svn))$'
 
-  "==================================================================================
-  " Configurando o plugin Fugitive
-  "==================================================================================
-  nnoremap <leader>gd :Gvdiffsplit<cr>
-  nnoremap <leader>gs :Git<cr>
-  nnoremap <leader>gb :Git blame<cr>
-  nnoremap <leader>gc :Gi commit<cr>
-  nnoremap <leader>ge :Gedit<cr>
-  nnoremap <leader>gm :GMove
-  nnoremap <leader>gr :Gread<cr>
-  nnoremap <leader>grm :Gremove<cr>
-  nnoremap <leader>gp :Git push
+"==================================================================================
+" Configurando o plugin Fugitive
+"==================================================================================
+nnoremap <leader>gd :Gvdiffsplit<cr>
+nnoremap <leader>gs :Git<cr>
+nnoremap <leader>gb :Git blame<cr>
+nnoremap <leader>gc :Gi commit<cr>
+nnoremap <leader>ge :Gedit<cr>
+nnoremap <leader>gm :GMove
+nnoremap <leader>gr :Gread<cr>
+nnoremap <leader>grm :Gremove<cr>
+nnoremap <leader>gp :Git push
 
-  "==================================================================================
-  " Configurando o plugin Powerline
-  "==================================================================================
-  set laststatus=2
-  let g:airline_powerline_fonts=1
-  let g:airline#extensions#tabline#enabled=1
-  let g:airline#extensions#tabline#buffer_min_count=2
-  let g:airline#extensions#tabline#tab_min_count=2
-  set t_Co=256
+"==================================================================================
+" Configurando o plugin Powerline
+"==================================================================================
+set laststatus=2
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#buffer_min_count=2
+let g:airline#extensions#tabline#tab_min_count=2
+set t_Co=256
 
-  "==================================================================================
-  " Configurando o plugin Vimux
-  "==================================================================================
-  let g:VimuxOrientation = "v"
-  map <Leader>rc :call VimuxPromptCommand() <CR>
-  map <Leader>rr :call VimuxRunLastCommand() <CR>
-  map <Leader>rz :call VimuxZoomRunner() <CR>
-  map <Leader>rq :call VimuxCloseRunner() <CR>
+"==================================================================================
+" Configurando o plugin Vimux
+"==================================================================================
+let g:VimuxOrientation = "v"
+map <Leader>rc :call VimuxPromptCommand() <CR>
+map <Leader>rr :call VimuxRunLastCommand() <CR>
+map <Leader>rz :call VimuxZoomRunner() <CR>
+map <Leader>rq :call VimuxCloseRunner() <CR>
 
-  "==================================================================================
-  " Configurando o plugin Vim-GO
-  "==================================================================================
-  let g:go_highlight_fields = 1
-  let g:go_highlight_functions = 1
-  let g:go_highlight_function_calls = 1
-  let g:go_highlight_extra_types = 1
-  let g:go_highlight_operators = 1
-  let g:go_auto_type_info = 1
+"==================================================================================
+" Configurando o plugin Vim-GO
+"==================================================================================
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+let g:go_auto_type_info = 1
 
-  let g:go_fmt_autosave = 1
-  let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
 
-  "==================================================================================
-  " Configurando o plugin Web Devicons
-  "==================================================================================
-  " let g:webdevicons_enable_nerdtree = 1
-  let g:webdevicons_conceal_nerdtree_brackets = 1
-  " let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-  " let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+"==================================================================================
+" Configurando o plugin Web Devicons
+"==================================================================================
+" let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
 
-  "==================================================================================
-  " Configurando o plugin Indent Guides
-  "==================================================================================
-  let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-  "
-  "==================================================================================
-  " Configurando o plugin Vim Terraform
-  "==================================================================================
-  let g:terraform_fmt_on_save=1 "Executa a format file do terraform no save
+"==================================================================================
+" Configurando o plugin Indent Guides
+"==================================================================================
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
-  "==================================================================================
-  " Configurando a identação do editor
-  "==================================================================================
-  set autoindent   "Auto-identação
-  set smartindent
-  set smarttab
-  set shiftwidth=2 "Cria 2 espaçoes na tabulação
-  set softtabstop=2 "Cria 2 espaçoes na tabulação
-  set tabstop=2    "Altera largura da tabulação
-  set expandtab    "Criar espaco ano lugar da tabulação
-  set linebreak
+"==================================================================================
+" Configurando o plugin Vim Terraform
+"==================================================================================
+let g:terraform_fmt_on_save=1 "Executa a format file do terraform no save
 
-  " Display tabs and trailing spaces visually
-  set list listchars=tab:\ \ ,trail:·
-  "==================================================================================
-  " Configurando as buscas
-  "==================================================================================
-  set incsearch    "A cada caractere digitado, a busca automaticamente é incrementada
-  set ignorecase   "Ignora case das letras (maiusculos e minusculos)
-  set smartcase    "Se a primeira letra for maiuscula, ele passa a considerar o case (maiusculos e minuscolos)
+"==================================================================================
+" Configurando o plugin Dash
+"==================================================================================
+noremap <leader>d :Dash<CR>
 
-  "==================================================================================
-  " Configurando para desabilitar os backups
-  " Para que nao fique gerando arquivos temporarios, 
-  " iniados com '~' e terminados em '.swp'
-  "==================================================================================
-  set nobackup
-  set noswapfile
-  set nowritebackup
-  set backspace=indent,eol,start   "Libara o uso da tecla de espaço no modo insert
+"==================================================================================
+" Configurando a identação do editor
+"==================================================================================
+set autoindent   "Auto-identação
+set smartindent
+set smarttab
+set shiftwidth=2 "Cria 2 espaçoes na tabulação
+set softtabstop=2 "Cria 2 espaçoes na tabulação
+set tabstop=2    "Altera largura da tabulação
+set expandtab    "Criar espaco ano lugar da tabulação
+set linebreak
 
-  "==================================================================================
-  " Configurando outras coisas
-  "==================================================================================
-  set number relativenumber         "Exibe o numero de cada linha de forma relativa
-  set title                         "No titulo da janela exibe o nome do arquivo aberto
-  syntax on                         "Habilita sintaxe colorida
-  let g:dracula_italic = 0
-  colorscheme dracula
-  set mouse=a                       "Habilitando o uso do mouse
-  set encoding=UTF-8                "Define um encode padrao para todos os arquivos 
-  set showcmd                       "Exibe os comandos ainda nao terminados
-  set timeoutlen=1000 ttimeoutlen=0 "Desliga o delay ao voltar par o normal mode
-  set hidden
-  set nofoldenable                  " disable folding
-  set foldmethod=syntax             " Liga o fold por sintaxe
-  set foldlevelstart=1
-  "set spell spelllang=pt           " Dicionário em portugues usando o dicionario na pasta spell
-  set autoread                      " Automaticamente detecta todas as mudancas nos arquivos realizadas fora do vim
-  set history=1000                  " Armazena 1000 itens no historico de comandos
-  set visualbell                    " Desabilita o som das notificacoes
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
+"==================================================================================
+" Configurando as buscas
+"==================================================================================
+set incsearch    "A cada caractere digitado, a busca automaticamente é incrementada
+set ignorecase   "Ignora case das letras (maiusculos e minusculos)
+set smartcase    "Se a primeira letra for maiuscula, ele passa a considerar o case (maiusculos e minuscolos)
+
+"==================================================================================
+" Configurando para desabilitar os backups
+" Para que nao fique gerando arquivos temporarios, 
+" iniados com '~' e terminados em '.swp'
+"==================================================================================
+set nobackup
+set noswapfile
+set nowritebackup
+set backspace=indent,eol,start   "Libara o uso da tecla de espaço no modo insert
+
+"==================================================================================
+" Configurando outras coisas
+"==================================================================================
+set number relativenumber         "Exibe o numero de cada linha de forma relativa
+set title                         "No titulo da janela exibe o nome do arquivo aberto
+syntax on                         "Habilita sintaxe colorida
+let g:dracula_italic = 0
+colorscheme dracula
+set mouse=a                       "Habilitando o uso do mouse
+set encoding=UTF-8                "Define um encode padrao para todos os arquivos 
+set showcmd                       "Exibe os comandos ainda nao terminados
+set timeoutlen=1000 ttimeoutlen=0 "Desliga o delay ao voltar par o normal mode
+set hidden
+set nofoldenable                  " disable folding
+set foldmethod=syntax             " Liga o fold por sintaxe
+set foldlevelstart=1
+"set spell spelllang=pt           " Dicionário em portugues usando o dicionario na pasta spell
+set autoread                      " Automaticamente detecta todas as mudancas nos arquivos realizadas fora do vim
+set history=1000                  " Armazena 1000 itens no historico de comandos
+set visualbell                    " Desabilita o som das notificacoes
 
 
-  "==================================================================================
-  " Configurando o filetype
-  "==================================================================================
-  autocmd BufNewFile,BufRead *.html.erb set filetype=html
-  " autocmd BufNewFile,BufRead *.js set filetype=js
-  autocmd BufNewFile,BufRead Gemfile set filetype=ruby
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-  autocmd BufRead,BufNewFile *.json set filetype=json
-  autocmd BufRead,BufNewFile *.slim set filetype=slim
-  autocmd BufRead,BufNewFile Dockerfile set filetype=dockerfile
-  autocmd BufRead,BufNewFile *.spec.js set foldlevel=3
-  autocmd BufRead,BufNewFile *.go set filetype=go
+"==================================================================================
+" Configurando o filetype
+"==================================================================================
+autocmd BufNewFile,BufRead *.html.erb set filetype=html
+" autocmd BufNewFile,BufRead *.js set filetype=js
+autocmd BufNewFile,BufRead Gemfile set filetype=ruby
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.json set filetype=json
+autocmd BufRead,BufNewFile *.slim set filetype=slim
+autocmd BufRead,BufNewFile Dockerfile set filetype=dockerfile
+autocmd BufRead,BufNewFile *.spec.js set foldlevel=3
+autocmd BufRead,BufNewFile *.go set filetype=go
 
-  "==================================================================================
-  " Configurando os folds por sintaxe
-  "==================================================================================
-  let javaScript_fold=1         " JavaScript
-  let perl_fold=1               " Perl
-  let php_folding=1             " PHP
-  let r_syntax_folding=1        " R
-  let ruby_fold=1               " Ruby
-  let sh_fold_enabled=1         " sh
-  let vimsyn_folding='af'       " Vim script
-  let xml_syntax_folding=1      " XML
+"==================================================================================
+" Configurando os folds por sintaxe
+"==================================================================================
+let javaScript_fold=1         " JavaScript
+let perl_fold=1               " Perl
+let php_folding=1             " PHP
+let r_syntax_folding=1        " R
+let ruby_fold=1               " Ruby
+let sh_fold_enabled=1         " sh
+let vimsyn_folding='af'       " Vim script
+let xml_syntax_folding=1      " XML
 
-  "==================================================================================
-  " Configurando Atalhos Nativos
-  "==================================================================================
-  nnoremap <leader>f gg=G<cr>
-  nnoremap <leader>a :Ack 
-  nnoremap <leader>s :%s/
-  nnoremap <leader>ev :vsplit ~/.vim/vimrc<CR>
-  nnoremap <leader>sv :source ~/.vim/vimrc<CR>
+"==================================================================================
+" Configurando Atalhos Nativos
+"==================================================================================
+nnoremap <leader>f gg=G<cr>
+nnoremap <leader>a :Ack 
+nnoremap <leader>s :%s/
+nnoremap <leader>ev :vsplit ~/.vim/vimrc<CR>
+nnoremap <leader>sv :source ~/.vim/vimrc<CR>
 
-  "==================================================================================
-  " Configurando a navegacao em tab
-  "==================================================================================
-  nnoremap <leader>t :tabnew<cr>
-  nnoremap <leader>e :tabedit
-  nnoremap <leader>c :tabclose<cr>
-  nnoremap <leader>n :tabnext<cr>
-  nnoremap <leader>p :tabprevious<cr>
+"==================================================================================
+" Configurando a navegacao em tab
+"==================================================================================
+nnoremap <leader>t :tabnew<cr>
+nnoremap <leader>e :tabedit
+nnoremap <leader>c :tabclose<cr>
+nnoremap <leader>n :tabnext<cr>
+nnoremap <leader>p :tabprevious<cr>
 
-  "==================================================================================
-  " Configurando a clipboard
-  "==================================================================================
-  " map <C-c> "+y
-  " map <C-v> "+p
-  noremap <leader>y "+y
-  noremap <leader>d "+d
-  noremap <leader>v "+p
+"==================================================================================
+" Configurando a clipboard
+"==================================================================================
+" map <C-c> "+y
+" map <C-v> "+p
+noremap <leader>y "+y
+noremap <leader>v "+p
 
-  nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <leader>. :CtrlPTag<cr>
