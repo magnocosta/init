@@ -215,7 +215,7 @@ let xml_syntax_folding=1      " XML
 "==================================================================================
 nnoremap <leader>f gg=G<cr>
 nnoremap <leader>a :Ack 
-nnoremap <leader>s :%s/
+nnoremap <leader>s :%s/\<<C-r><C-w>\>/
 nnoremap <leader>ev :vsplit ~/.vim/vimrc<CR>
 nnoremap <leader>sv :source ~/.vim/vimrc<CR>
 
