@@ -60,7 +60,7 @@ map <C-f> :NERDTreeFind<CR>
 " Configurando o plugin CTRLP
 "==================================================================================
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*/tmp/*,*/bin/*,*/log/*,*/public/uploads/* 
+set wildignore+=*/tmp/*,*/bin/*,*/coverage/*,*/log/*,*/public/uploads/* 
 set splitright
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tag)|(\.(swp|ico|git|svn))$'
 
@@ -121,7 +121,7 @@ let g:webdevicons_conceal_nerdtree_brackets = 1
 " Configurando o plugin Indent Guides
 "==================================================================================
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-"
+
 "==================================================================================
 " Configurando o plugin Vim Terraform
 "==================================================================================
