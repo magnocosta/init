@@ -1,0 +1,50 @@
+snippet :
+	${1} := ${2}
+snippet pf
+	fmt.Printf("${1}", ${2})
+snippet pl
+	fmt.Println("${1}", ${2})
+snippet fun
+	func ${1}() {
+		${2}
+	}
+snippet fun1
+	func ${1}(${2}) {
+		${3}
+	}
+snippet fun2
+	func ${1}(${2}, ${3}) {
+		${4}
+	}
+snippet fun3
+	func ${1}(${2}, ${3}, ${4}) {
+		${5}
+	}
+snippet fun4
+	func ${1}(${2}, ${3}, ${4}, ${5}) {
+		${6}
+	}
+snippet sfun
+	func (${2}) ${1}() {
+		${3}
+	}
+snippet interface
+	type ${1:Name} interface {
+		${2:/* TODO: add methods */}
+	}
+snippet struct
+	type ${1:Name} struct {
+		${2:/* TODO: add fields */}
+	}
+snippet if
+	if ${1:condition} {
+		${2}
+	}
+snippet else
+	else {
+		${1}
+	}
+snippet ife
+	if err := ${1:condition}; err != nil {
+		${2}
+	}

@@ -1,10 +1,11 @@
 windows:
   - Vim:
-      layout: main-vertical
+      layout: main-horizontal
       panes:
         - vim
-  - Console:
-      layout: main-vertical
-      panes:
-        - clear
+        - console
+  # - Console:
+  #     layout: main-vertical
+  #     panes:
+  #       - clear
 

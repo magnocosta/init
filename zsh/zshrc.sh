@@ -12,7 +12,6 @@ plugins=(
   history
   macos
   sprunge
-  sublime
   colored-man-pages
 )
 
@@ -22,15 +21,15 @@ source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# RVM
+# # RVM
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+# # NVM
+# export NVM_DIR="$HOME/.nvm"
+#   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+#   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
-# SDK-MAN
+# # SDK-MAN
 export SDKMAN_DIR="/Users/magnocosta/.sdkman"
 [[ -s "/Users/magnocosta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/magnocosta/.sdkman/bin/sdkman-init.sh"
 
@@ -44,11 +43,11 @@ start_tmux_project() {
   parent=`basename $(dirname ${PWD})`
   parent=${(C)parent}
   parent=${parent//-/ }
-  
+
   name=`basename ${PWD}`
   name=${(C)name}
   name=${name//-/ }
-  
+
   session="$parent -> $name"
 
   echo "$session"
