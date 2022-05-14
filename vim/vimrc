@@ -3,44 +3,47 @@
 
 set nocompatible                  "Recomendado pra evitar problemas
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 "==================================================================================
-" Instaland os meus plugins oficiais
+" Instalando a base do meu Vim
 "==================================================================================
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'tomtom/tcomment_vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'benmills/vimux'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ludovicchabant/vim-gutentags'
+
+"==================================================================================
+" Instalando suporte adicionais e linguagens
+"==================================================================================
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'hashivim/vim-terraform'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'elzr/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 "==================================================================================
 " Instalando os meus plugins em experimento
 "==================================================================================
-Plugin 'tomtom/tcomment_vim'
 Plugin 'msanders/snipmate.vim'
-Plugin 'mileszs/ack.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'slim-template/vim-slim'
-Plugin 'rizzatti/dash.vim'
-Plugin 'elzr/vim-json'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'benmills/vimux'
 Plugin 'miyakogi/conoline.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'hashivim/vim-terraform'
-Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'preservim/tagbar'
 
 call vundle#end()
 
@@ -126,11 +129,6 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 " Configurando o plugin Vim Terraform
 "==================================================================================
 let g:terraform_fmt_on_save=1 "Executa a format file do terraform no save
-
-"==================================================================================
-" Configurando o plugin Dash
-"==================================================================================
-noremap <leader>d :Dash<CR>
 
 "==================================================================================
 " Configurando a identação do editor
@@ -237,3 +235,4 @@ noremap <leader>y "+y
 noremap <leader>v "+p
 
 nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <leader>, :TagbarToggle<cr>
