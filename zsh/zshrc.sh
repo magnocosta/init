@@ -21,13 +21,13 @@ source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# # RVM
+# RVM
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# # NVM
-# export NVM_DIR="$HOME/.nvm"
-#   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-#   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+# NVM
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
 # # SDK-MAN
 export SDKMAN_DIR="/Users/magnocosta/.sdkman"
@@ -38,6 +38,7 @@ alias ctags_js='ln -s ~/.init/ctags/javascript/ctagsrc "$(pwd)"/.ctags'
 alias ctags_terraform='ln -s ~/.init/ctags/terraform/ctagsrc "$(pwd)"/.ctags'
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="/Users/magnocosta/go/bin:$PATH"
 
 start_tmux_project() {
   parent=`basename $(dirname ${PWD})`
@@ -61,3 +62,8 @@ attach_tmux() {
 # alias mux='tmuxinator s -n "`basename $(pwd)`" -p ~/.tmuxinator.yml'
 alias s=start_tmux_project
 alias a=attach_tmux
+
+alias vim=nvim
+alias v=vim
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
