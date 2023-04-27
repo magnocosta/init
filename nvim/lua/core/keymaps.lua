@@ -27,7 +27,12 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Remap L and H
 keymap("n", "H", "0", opts)
-keymap("n", "L", "0", opts)
+keymap("n", "L", "$", opts)
+
+-- Remap tabs
+keymap("n", "t]", "<cmd>tabnext<cr>", opts)
+keymap("n", "t[", "<cmd>tabprevious<cr>", opts)
+keymap("n", "tn", "<cmd>tabnew<cr>", opts)
 
 -- Nvim Tree
 keymap("n", "<c-n>", ":NvimTreeToggle<CR>", opts)

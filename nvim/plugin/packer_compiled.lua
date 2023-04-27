@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/blamer.nvim",
     url = "https://github.com/APZelos/blamer.nvim"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -155,6 +160,11 @@ _G.packer_plugins = {
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -169,6 +179,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tmux-navigation"] = {
+    loaded = true,
+    path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/nvim-tmux-navigation",
+    url = "https://github.com/alexghergh/nvim-tmux-navigation"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -199,6 +214,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
+  },
+  ["telescope-lsp-handlers.nvim"] = {
+    loaded = true,
+    path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/telescope-lsp-handlers.nvim",
+    url = "https://github.com/Slotos/telescope-lsp-handlers.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
