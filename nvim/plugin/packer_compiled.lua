@@ -244,6 +244,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/vim-terraform",
     url = "https://github.com/hashivim/vim-terraform"
+  },
+  ["vim-unimpaired"] = {
+    loaded = true,
+    path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/vim-unimpaired",
+    url = "https://github.com/tpope/vim-unimpaired"
   }
 }
 
