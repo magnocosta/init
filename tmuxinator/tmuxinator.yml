@@ -1,11 +1,8 @@
 windows:
   - Vim:
-      layout: main-horizontal
+      layout: main-vertical
       panes:
         - vim
-        - console
-  # - Console:
-  #     layout: main-vertical
-  #     panes:
-  #       - clear
+        - clear
+        - tmux select-layout main-horizontal; tmux resize-pane -D 20; clear
 
