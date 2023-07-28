@@ -213,33 +213,53 @@ local lsp_flags = {
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require'lspconfig'.gopls.setup {
+local lspConfig = require('lspconfig')
+
+lspConfig.gopls.setup {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
 }
 
-require'lspconfig'.dockerls.setup {
+lspConfig.dockerls.setup {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
 }
 
-require'lspconfig'.terraformls.setup {
+lspConfig.terraformls.setup {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
 }
 
-require'lspconfig'.terraformls.setup {
+lspConfig.phpactor.setup{
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
 }
 
-require'lspconfig'.phpactor.setup{
+lspConfig.lua_ls.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
+}
+
+lspConfig.tsserver.setup{
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
 }
 
+-- lspConfig.eslint.setup{
+--   on_attach = on_attach,
+--   flags = lsp_flags,
+--   capabilities = capabilities,
+-- }
