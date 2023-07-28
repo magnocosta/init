@@ -29,14 +29,17 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "H", "0", opts)
 keymap("n", "L", "$", opts)
 
+-- Clear search
+keymap("n", "<Space>c", "<cmd>:noh<cr>", opts)
+
+-- Close all buffers
+keymap("n", "<Space>bq", "<cmd>:%bd|e#<cr>", opts)
+
 -- Remap tabs
-keymap("n", "t]", "<cmd>tabnext<cr>", opts)
-keymap("n", "t[", "<cmd>tabprevious<cr>", opts)
 keymap("n", "tn", "<cmd>tabnew<cr>", opts)
 
 -- Nvim Tree
 keymap("n", "<c-n>", ":NvimTreeToggle<CR>", opts)
-keymap("n", "<c-m>", ":NvimTreeFocus<CR>", opts)
 keymap("n", "<c-f>", ":NvimTreeFindFile<CR>", opts)
 
 -- Telescope
@@ -47,6 +50,7 @@ keymap("n", "<Space>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<Space>fh", "<cmd>Telescope help_tags<cr>", opts)
 keymap("n", "<Space>fp", "<cmd>Telescope projects<cr>", opts)
 
+-- Fugitive
 keymap("n", "<Space>gd", "<cmd>:Gvdiffsplit<cr>", opts)
 keymap("n", "<Space>gs", "<cmd>:Git<cr>", opts)
 keymap("n", "<Space>gb", "<cmd>:Git blame<cr>", opts)
