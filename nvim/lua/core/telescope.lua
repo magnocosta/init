@@ -9,6 +9,9 @@ telescope.setup({
 		find_files = {
 			hidden = false,
 		},
+    git_branches = {
+      theme = "dropdown",
+    }
 	},
 	defaults = {
 		file_ignore_patterns = {
