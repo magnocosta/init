@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
+-- local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -29,14 +29,11 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "H", "0", opts)
 keymap("n", "L", "$", opts)
 
--- Clear search
-keymap("n", "<Space>c", "<cmd>:noh<cr>", opts)
-
 -- Close all buffers
-keymap("n", "<Space>bq", "<cmd>:%bd|e#<cr>", opts)
+keymap("n", "bq", "<cmd>:%bd|e#<cr>", opts)
 
 -- Remap tabs
-keymap("n", "tn", "<cmd>tabnew<cr>", opts)
+keymap("n", "t", "<cmd>tabnew<cr>", opts)
 
 -- Nvim Tree
 keymap("n", "<c-n>", ":NvimTreeToggle<CR>", opts)
@@ -44,18 +41,18 @@ keymap("n", "<c-f>", ":NvimTreeFindFile<CR>", opts)
 
 -- Telescope
 keymap("n", "<c-p>", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<Space>ff", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<Space>fg", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<Space>fb", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<Space>fh", "<cmd>Telescope help_tags<cr>", opts)
-keymap("n", "<Space>fp", "<cmd>Telescope projects<cr>", opts)
+keymap("n", "ff", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "fb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "fb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "fv", "<cmd>Telescope branch<cr>", opts)
 
 -- Fugitive
-keymap("n", "<Space>gd", "<cmd>:Gvdiffsplit<cr>", opts)
-keymap("n", "<Space>gs", "<cmd>:Git<cr>", opts)
-keymap("n", "<Space>gb", "<cmd>:Git blame<cr>", opts)
-keymap("n", "<Space>gc", "<cmd>:Git commit<cr>", opts)
-keymap("n", "<Space>ge", "<cmd>:Gedit<cr>", opts)
-keymap("n", "<Space>gr", "<cmd>:Gread<cr>", opts)
-keymap("n", "<Space>gp", "<cmd>:G push<cr>", opts)
-keymap("n", "<Space>gl", "<cmd>:0Gclog<cr>", opts)
+keymap("n", "gd", "<cmd>:Gvdiffsplit<cr>", opts)
+keymap("n", "gs", "<cmd>:Git<cr>", opts)
+keymap("n", "gb", "<cmd>:Git blame<cr>", opts)
+keymap("n", "gc", "<cmd>:Git commit<cr>", opts)
+keymap("n", "ge", "<cmd>:Gedit<cr>", opts)
+keymap("n", "gr", "<cmd>:Gread<cr>", opts)
+keymap("n", "gp", "<cmd>:G push<cr>", opts)
+keymap("n", "gl", "<cmd>:0Gclog<cr>", opts)
