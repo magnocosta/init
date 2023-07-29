@@ -45,7 +45,7 @@ keymap("n", "ff", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "fb", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "fv", "<cmd>Telescope branch<cr>", opts)
+keymap("n", "fv", "<cmd>Telescope git_branches<cr>", opts)
 
 -- Fugitive
 keymap("n", "gd", "<cmd>:Gvdiffsplit<cr>", opts)
