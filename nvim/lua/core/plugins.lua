@@ -19,6 +19,7 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
+
   -- Basic Editor
   use({'wbthomason/packer.nvim'             })
   use({'windwp/nvim-autopairs'              })
@@ -36,6 +37,7 @@ return require('packer').startup(function(use)
   use({'alexghergh/nvim-tmux-navigation'    })
   use({'akinsho/bufferline.nvim'            })
 
+  -- Theme
   use({ "Mofiqul/dracula.nvim" })
 
   use({'nvim-lualine/lualine.nvim', opt = true     })
