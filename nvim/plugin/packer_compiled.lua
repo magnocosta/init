@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
-  ["blamer.nvim"] = {
-    loaded = true,
-    path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/blamer.nvim",
-    url = "https://github.com/APZelos/blamer.nvim"
-  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -210,11 +205,6 @@ _G.packer_plugins = {
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["project.nvim"] = {
-    loaded = true,
-    path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/project.nvim",
-    url = "https://github.com/ahmedkhalf/project.nvim"
-  },
   ["telescope-lsp-handlers.nvim"] = {
     loaded = true,
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/telescope-lsp-handlers.nvim",
@@ -225,11 +215,6 @@ _G.packer_plugins = {
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["toggleterm.nvim"] = {
-    loaded = true,
-    path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
-    url = "https://github.com/akinsho/toggleterm.nvim"
-  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -239,6 +224,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/magnocosta/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-terraform"] = {
     loaded = true,
