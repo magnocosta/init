@@ -30,6 +30,10 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 
+-- Formating files
+keymap("n", "<leader>cf", "gg=G", opts)
+keymap("n", "<leader>cj", ":%!jq .", opts)
+
 -- Remap L and H
 keymap("n", "H", "0", opts)
 keymap("n", "L", "$", opts)
