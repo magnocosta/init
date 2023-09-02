@@ -1,0 +1,9 @@
+[credential]
+	helper = store
+[user]
+	email = magnocosta.br@gmail.com
+	name = Magno Costa
+[push]
+	autoSetupRemote = true
+[format]
+	pretty = %C(yellow)%h %C(cyan)%ad %C(green)[%an] %C(red)- %C(reset)%s
