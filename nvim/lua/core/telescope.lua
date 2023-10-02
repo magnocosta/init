@@ -7,7 +7,7 @@ end
 telescope.setup({
 	pickers = {
 		find_files = {
-			hidden = false,
+			hidden = true,
 		},
     git_branches = {
       theme = "dropdown",
@@ -30,6 +30,12 @@ telescope.setup({
 			"^.next/",
 			"%.log",
 			"%.DS_Store",
+      "android",
+      "ios",
+      "build",
+      ".idea",
+      ".git",
+      ".dart_tool"
 		},
 	},
 })
