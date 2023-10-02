@@ -65,6 +65,7 @@ return require('packer').startup(function(use)
   -- Additional language support
   use({'fatih/vim-go' })
   use({'hashivim/vim-terraform' })
+  use({'dart-lang/dart-vim-plugin' })
 
   if packer_bootstrap then
     require('packer').sync()

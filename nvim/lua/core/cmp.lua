@@ -67,7 +67,7 @@ cmp.setup({
 
 			-- The function below will be called before any actual modifications from lspkind
 			-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-			before = function(entry, vim_item)
+			before = function(_, vim_item)
 				local maxwidth = 80
 				vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
 				return vim_item
@@ -244,6 +244,12 @@ lspConfig.lua_ls.setup{
 }
 
 lspConfig.tsserver.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+}
+
+lspConfig.dartls.setup{
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
