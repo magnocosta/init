@@ -46,6 +46,8 @@ keymap("n", "<leader>bq", "<cmd>:%bd|e#<cr>", opts)
 
 -- Remap tabs
 keymap("n", "<leader>t", "<cmd>tabnew<cr>", opts)
+keymap("n", "]t", "<cmd>tabnext<cr>", opts)
+keymap("n", "[t", "<cmd>tabprevious<cr>", opts)
 
 -- Nvim Tree
 keymap("n", "<c-n>", ":NvimTreeToggle<CR>", opts)

@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
   -- Theme
   use({ "Mofiqul/dracula.nvim" })
 
-  use({'nvim-lualine/lualine.nvim', opt = true     })
+  use({'nvim-lualine/lualine.nvim' })
   use({'nvim-tree/nvim-tree.lua',   tag = 'nightly'})
 
   use({'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}, tag = '0.1.0'  })
