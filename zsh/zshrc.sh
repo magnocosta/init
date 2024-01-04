@@ -21,8 +21,6 @@ source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# RVM
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -66,4 +64,7 @@ alias a=attach_tmux
 alias vim=nvim
 alias v=vim
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH="/usr/local/Caskroom/flutter/3.10.5/flutter/bin:$PATH"
 
+# RVM
+source $HOME/.rvm/scripts/rvm
