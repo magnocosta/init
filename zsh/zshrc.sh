@@ -65,6 +65,7 @@ alias vim=nvim
 alias v=vim
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="/usr/local/Caskroom/flutter/3.10.5/flutter/bin:$PATH"
+export PATH="/Users/magnocosta/.init/scripts:$PATH"
 
 # RVM
 source $HOME/.rvm/scripts/rvm
