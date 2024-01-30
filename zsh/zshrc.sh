@@ -21,6 +21,9 @@ source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Home and End  keys to move in terminal
+bindkey '\e[H'    beginning-of-line
+bindkey '\e[F'    end-of-line
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
