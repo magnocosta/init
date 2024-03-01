@@ -72,3 +72,5 @@ export PATH="/Users/magnocosta/.init/scripts:$PATH"
 
 # RVM
 source $HOME/.rvm/scripts/rvm
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
