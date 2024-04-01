@@ -14,6 +14,5 @@ echo $TMUX_WINDOW_NAME
 
 tmux new-window -n "$TMUX_WINDOW_NAME"
 tmux send-keys -t "$TMUX_WINDOW_NAME" "export AWS_PROFILE=$AWS_PROFILE;export AWS_REGION=$AWS_REGION" C-m
+tmux send-keys -t "$TMUX_WINDOW_NAME" "aws sso login" C-m
 tmux send-keys -t "$TMUX_WINDOW_NAME" "clear" C-m
-
-aws sso login
