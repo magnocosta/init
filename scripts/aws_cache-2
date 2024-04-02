@@ -1,0 +1,8 @@
+#!/bin/bash
+
+CACHE_DIR=~/.init/cache/${AWS_PROFILE}
+CACHE_FILE_NAME=aws_ssm.cache
+CACHE_SSM=$CACHE_DIR/$CACHE_FILE_NAME
+
+mkdir -p $CACHE_DIR
+aws ssm get-parameters-by-path --path "/" --recursive --query "Parameters[*].[Name]" --output text > $CACHE_SSM
