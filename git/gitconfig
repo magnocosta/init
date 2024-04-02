@@ -6,4 +6,7 @@
 [push]
 	autoSetupRemote = true
 [format]
-	pretty = %C(yellow)%h %C(cyan)%ad %C(green)[%an] %C(red)- %C(reset)%s
+ 	pretty = %C(yellow)%h %C(cyan)%ad %C(green)[%an] %C(red)- %C(reset)%s
+
+[includeif "gitdir:~/dev/projects/route/"]
+  path = ~/dev/projects/route/gitconfig
