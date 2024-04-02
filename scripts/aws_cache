@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ -z "$AWS_PROFILE" ]; then
+    echo "AWS_PROFILE is not defined"
+    exit 1
+fi
+
+CACHE_DIR=~/.init/cache/$AWS_PROFILE
+
+if [ ! -d  "$CACHE_DIR" ]; then
+  mkdir -p  $CACHE_DIR
+fi
+
+aws sqs list-queues --query 'QueueUrls[*] | join(`\n`, @)' --output text > $CACHE_DIR/aws-sqs-queues.cache
