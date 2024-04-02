@@ -39,9 +39,9 @@ return require('packer').startup(function(use)
   use({ "Mofiqul/dracula.nvim" })
 
   use({'nvim-lualine/lualine.nvim' })
-  use({'nvim-tree/nvim-tree.lua',   tag = 'nightly'})
+  use({'nvim-tree/nvim-tree.lua' })
 
-  use({'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}, tag = '0.1.0'  })
+  use({'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}, tag = '0.1.4'  })
   use({'Slotos/telescope-lsp-handlers.nvim' })
   use({'nvim-treesitter/nvim-treesitter',
     run = function()
