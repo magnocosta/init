@@ -36,7 +36,8 @@ keymap("n", "<leader>cj", ":%!jq .", opts)
 keymap("n", "<leader>w", ":w<CR>", opts)
 keymap("n", "<leader>o", ":on<CR>", opts)
 keymap("n", "<leader>a", ":qa!<CR>", opts)
-keymap("i", "<leader>j", "<esc><CR>", opts)
+keymap("i", "<leader>j", "<esc>", opts)
+keymap("i", ";;", "<esc>", opts)
 
 -- Remap L and H
 keymap("n", "H", "0", opts)
@@ -72,4 +73,9 @@ keymap("n", "<leader>gc", "<cmd>:Git commit<cr>", opts)
 keymap("n", "<leader>ge", "<cmd>:Gedit<cr>", opts)
 keymap("n", "<leader>gr", "<cmd>:Gread<cr>", opts)
 keymap("n", "<leader>gp", "<cmd>:G push<cr>", opts)
+keymap("n", "<leader>go", "<cmd>:G pull<cr>", opts)
 keymap("n", "<leader>gl", "<cmd>:0Gclog<cr>", opts)
+
+
+keymap("n", "<leader>gh", "<cmd>:diffget //2<cr>", opts)
+keymap("n", "<leader>gu", "<cmd>:diffget //3<cr>", opts)
