@@ -2,7 +2,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZSH=/Users/magnocosta/.oh-my-zsh
+export ZSH=/Users/$USER/.oh-my-zsh
 export EDITOR='vim'
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -18,28 +18,27 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Home and End  keys to move in terminal
 bindkey '\e[H'    beginning-of-line
 bindkey '\e[F'    end-of-line
 
 # NVM
+export NVM_HOMEBREW=$(brew --prefix nvm)
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+   [ -s "$NVM_HOMEBREW/nvm.sh" ] && \. "$NVM_HOMEBREW/nvm.sh"  # This loads nvm
+   [ -s "$NVM_HOMEBREW/etc/bash_completion.d/nvm" ] && \. "$NVM_HOMEBREW/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# # SDK-MAN
-export SDKMAN_DIR="/Users/magnocosta/.sdkman"
-[[ -s "/Users/magnocosta/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/magnocosta/.sdkman/bin/sdkman-init.sh"
+# SDK-MAN
+export SDKMAN_DIR="/Users/$USER/.sdkman"
+[[ -s "/Users/$USER/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/$USER/.sdkman/bin/sdkman-init.sh"
 
 
-alias ctags_js='ln -s ~/.init/ctags/javascript/ctagsrc "$(pwd)"/.ctags'
-alias ctags_terraform='ln -s ~/.init/ctags/terraform/ctagsrc "$(pwd)"/.ctags'
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
-export PATH="/Users/magnocosta/go/bin:$PATH"
+export PATH="/Users/$USER/go/bin:$PATH"
 
 start_tmux_project() {
   parent=`basename $(dirname ${PWD})`
@@ -49,6 +48,7 @@ start_tmux_project() {
   name=`basename ${PWD}`
   name=${(C)name}
   name=${name//-/ }
+  name=$(echo "$name" | sed 's/\.//g')
 
   session="$parent -> $name"
 
@@ -60,17 +60,20 @@ attach_tmux() {
   echo `tmux attach #`
 }
 
-# alias mux='tmuxinator s -n "`basename $(pwd)`" -p ~/.tmuxinator.yml'
 alias s=start_tmux_project
 alias a=attach_tmux
-
 alias vim=nvim
 alias v=vim
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-export PATH="/usr/local/Caskroom/flutter/3.10.5/flutter/bin:$PATH"
-export PATH="/Users/magnocosta/.init/scripts:$PATH"
+alias la=tree
+alias cat=bat
+alias cl=clear
+
+#export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+#export PATH="/usr/local/Caskroom/flutter/3.10.5/flutter/bin:$PATH"
+export PATH="/Users/$USER/.init/scripts:$PATH"
 
 # RVM
-source $HOME/.rvm/scripts/rvm
+# source $HOME/.rvm/scripts/rvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"
