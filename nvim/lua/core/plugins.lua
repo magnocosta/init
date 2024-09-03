@@ -23,7 +23,6 @@ return require('packer').startup(function(use)
   -- Basic Editor
   use({'wbthomason/packer.nvim'             })
   use({'windwp/nvim-autopairs'              })
-  use({'nathom/filetype.nvim'               })
   use({'goolord/alpha-nvim'                 })
   use({'numToStr/Comment.nvim'              })
   use({'lewis6991/impatient.nvim'           })
@@ -41,7 +40,7 @@ return require('packer').startup(function(use)
   use({'nvim-lualine/lualine.nvim' })
   use({'nvim-tree/nvim-tree.lua' })
 
-  use({'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}, tag = '0.1.4'  })
+  use({'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}, tag = '0.1.6'  })
   use({'Slotos/telescope-lsp-handlers.nvim' })
   use({'nvim-treesitter/nvim-treesitter',
     run = function()
