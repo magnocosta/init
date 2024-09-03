@@ -7,10 +7,11 @@ end
 telescope.setup({
 	pickers = {
 		find_files = {
-			hidden = true,
+			hidden = false,
 		},
     git_branches = {
       theme = "dropdown",
+      pattern = "refs/heads/**",
     }
 	},
 	defaults = {
@@ -30,7 +31,6 @@ telescope.setup({
 			"logs/",
       "android/",
       "ios/",
-      "build/",
       "tmp/",
       "log/",
 
