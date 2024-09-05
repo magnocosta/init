@@ -64,7 +64,7 @@ alias s=start_tmux_project
 alias a=attach_tmux
 alias vim=nvim
 alias v=vim
-alias la=tree
+alias la="tree -L 2"
 alias cat=bat
 alias cl=clear
 
