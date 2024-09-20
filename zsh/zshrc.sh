@@ -13,6 +13,7 @@ plugins=(
   macos
   sprunge
   colored-man-pages
+  direnv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -65,6 +66,8 @@ alias a=attach_tmux
 alias vim=nvim
 alias v=vim
 alias la="tree -L 2"
+alias laa="tree -L 3"
+alias laaa="tree -L 4"
 alias cat=bat
 alias cl=clear
 
