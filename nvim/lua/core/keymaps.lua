@@ -36,12 +36,13 @@ keymap("n", "<leader>cj", ":%!jq .", opts)
 keymap("n", "<leader>w", ":w<CR>", opts)
 keymap("n", "<leader>o", ":on<CR>", opts)
 keymap("n", "<leader>a", ":qa!<CR>", opts)
-keymap("i", "<leader>j", "<esc>", opts)
 keymap("i", ";;", "<esc>", opts)
 
 -- Remap L and H
 keymap("n", "H", "0", opts)
 keymap("n", "L", "$", opts)
+keymap("v", "H", "0", opts)
+keymap("v", "L", "$", opts)
 
 -- Save the copy context
 keymap("x", "<leader>p", "\"_dP", opts)
