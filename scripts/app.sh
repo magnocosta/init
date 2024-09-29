@@ -12,6 +12,7 @@ set_app_env() {
   # tmux send-keys "export APP_ENV=$app_env;direnv reload" C-m
 }
 
+
 function app_command() {
   case $1 in
     "env")

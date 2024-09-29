@@ -7,14 +7,19 @@ fi
 
 case $1 in
     "aws")
-      source ./scripts/aws.sh
+      source ${DOTENV_PATH}/scripts/aws.sh
       shift
       aws_command "$@"
       ;;
     "app")
-      source ./scripts/app.sh
+      source ${DOTENV_PATH}/scripts/app.sh
       shift
       app_command "$@"
+      ;;
+    "tmux")
+      source ${DOTENV_PATH}/scripts/tmux.sh
+      shift
+      tmux_command "$@"
       ;;
     *)
         echo "Function not recognized." ;;

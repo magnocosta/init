@@ -40,29 +40,8 @@ export SDKMAN_DIR="/Users/$USER/.sdkman"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/Users/$USER/go/bin:$PATH"
+export DOTENV_PATH="/Users/$USER/.init"
 
-start_tmux_project() {
-  parent=`basename $(dirname ${PWD})`
-  parent=${(C)parent}
-  parent=${parent//-/ }
-
-  name=`basename ${PWD}`
-  name=${(C)name}
-  name=${name//-/ }
-  name=$(echo "$name" | sed 's/\.//g')
-
-  session="$parent -> $name"
-
-  echo "$session"
-  echo `tmuxinator s -n "$session" -p ~/.tmuxinator.yml`
-}
-
-attach_tmux() {
-  echo `tmux attach #`
-}
-
-alias s=start_tmux_project
-alias a=attach_tmux
 alias vim=nvim
 alias v=vim
 alias la="tree -L 2"
@@ -70,7 +49,9 @@ alias laa="tree -L 3"
 alias laaa="tree -L 4"
 alias cat=bat
 alias cl=clear
-alias bruce="scripts/bruce.sh"
+alias bruce="${DOTENV_PATH}/scripts/bruce.sh"
+alias s="bruce tmux app"
+alias a="bruce tmux attach"
 
 #export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 #export PATH="/usr/local/Caskroom/flutter/3.10.5/flutter/bin:$PATH"
