@@ -70,10 +70,11 @@ alias laa="tree -L 3"
 alias laaa="tree -L 4"
 alias cat=bat
 alias cl=clear
+alias bruce="scripts/bruce.sh"
 
 #export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 #export PATH="/usr/local/Caskroom/flutter/3.10.5/flutter/bin:$PATH"
-export PATH="/Users/$USER/.init/scripts:$PATH"
+# export PATH="/Users/$USER/.init/scripts:$PATH"
 
 # RVM
 # source $HOME/.rvm/scripts/rvm

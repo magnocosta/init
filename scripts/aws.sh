@@ -72,17 +72,19 @@ aws_ecs_deploy_status() {
   watch -n 1 "aws ecs describe-tasks --tasks $(aws ecs list-tasks --service-name $SERVICE_NAME --query 'taskArns' --output text) | jq '.tasks[] | {taskDefinitionArn, lastStatus, createdAt}'"
 }
 
-case $1 in
+function aws_command() {
+  case $1 in
     "login")
-        aws_login "$2" ;;
+      aws_login "$2" ;;
     "cache")
-        aws_cache ;;
+      aws_cache ;;
     "list-queues")
-        aws_sqs_list_queues ;;
+      aws_sqs_list_queues ;;
     "ssm-show-secret")
-        aws_ssm_show_secret ;;
+      aws_ssm_show_secret ;;
     "deploy-status")
-        aws_ecs_deploy_status "$2" ;;
+      aws_ecs_deploy_status "$2" ;;
     *)
-        echo "Function not recognized." ;;
-esac
+      echo "Function not recognized." ;;
+  esac
+}
