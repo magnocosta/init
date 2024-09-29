@@ -11,22 +11,29 @@ function tmux_command() {
   esac
 }
 
+sanitizeString() {
+  text=$1
+  text=${text//-/ } # replacing "-" to " "
+  text=${text//./ } # replacing "." to " "
+  output=""
+  for word in $text; do
+    aux=`echo ${word:0:1} | tr '[a-z]' '[A-Z]'`${word:1}
+    output+=" ${aux}"
+  done
+  echo $output
+}
+
 start_app() {
   parent=`basename $(dirname ${PWD})`
-  # parent=${(C)parent}
-  parent=${parent//-/ }
+  parent=$(sanitizeString "$parent")
 
   name=`basename ${PWD}`
-  # name=${(C)name}
-  name=${name//-/ }
-  name=$(echo "$name" | sed 's/\.//g')
+  name=$(sanitizeString "$name")
 
   session="$parent -> $name"
-
-  echo "$session"
-  echo `tmuxinator s -n "$session" -p ~/.tmuxinator.yml`
+  tmuxinator s -n "$session" -p ~/.tmuxinator.yml
 }
 
 attach_session() {
-  echo `tmux attach #`
+  tmux attach #
 }
