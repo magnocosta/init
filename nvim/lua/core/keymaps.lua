@@ -80,3 +80,5 @@ keymap("n", "<leader>gl", "<cmd>:0Gclog<cr>", opts)
 
 keymap("n", "<leader>gh", "<cmd>:diffget //2<cr>", opts)
 keymap("n", "<leader>gu", "<cmd>:diffget //3<cr>", opts)
+
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
