@@ -52,6 +52,7 @@ alias cl=clear
 alias bruce="${DOTENV_PATH}/scripts/bruce.sh"
 alias s="bruce tmux app"
 alias a="bruce tmux attach"
+alias b="bruce"
 
 #export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 #export PATH="/usr/local/Caskroom/flutter/3.10.5/flutter/bin:$PATH"
