@@ -130,19 +130,6 @@ cmp.setup({
     { name = "buffer" },
     { name = "path" },
   },
-  sorting = {
-    priority_weight = 10,
-    comparators = {
-      compare.kind,
-      compare.offset,
-      compare.exact,
-      compare.score,
-      compare.recently_used,
-      compare.sort_text,
-      compare.length,
-      compare.order,
-    },
-  },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
@@ -158,12 +145,14 @@ cmp.setup({
 })
 
 cmp.setup.cmdline(":", {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = "cmdline" },
   },
 })
 
 cmp.setup.cmdline("/", {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = "buffer" },
   },
@@ -176,22 +165,26 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+vim.diagnostic.config {
+  float = { border = "rounded" },
+}
+
 -- gray
-vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg='NONE', strikethrough=true, fg='#808080' })
+vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg = 'NONE', strikethrough = true, fg = '#808080' })
 -- blue
-vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { bg='NONE', fg='#569CD6' })
-vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { link='CmpIntemAbbrMatch' })
+vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { bg = 'NONE', fg = '#569CD6' })
+vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { link = 'CmpIntemAbbrMatch' })
 -- light blue
-vim.api.nvim_set_hl(0, 'CmpItemKindVariable', { bg='NONE', fg='#9CDCFE' })
-vim.api.nvim_set_hl(0, 'CmpItemKindInterface', { link='CmpItemKindVariable' })
-vim.api.nvim_set_hl(0, 'CmpItemKindText', { link='CmpItemKindVariable' })
+vim.api.nvim_set_hl(0, 'CmpItemKindVariable', { bg = 'NONE', fg = '#9CDCFE' })
+vim.api.nvim_set_hl(0, 'CmpItemKindInterface', { link = 'CmpItemKindVariable' })
+vim.api.nvim_set_hl(0, 'CmpItemKindText', { link = 'CmpItemKindVariable' })
 -- pink
-vim.api.nvim_set_hl(0, 'CmpItemKindFunction', { bg='NONE', fg='#C586C0' })
-vim.api.nvim_set_hl(0, 'CmpItemKindMethod', { link='CmpItemKindFunction' })
+vim.api.nvim_set_hl(0, 'CmpItemKindFunction', { bg = 'NONE', fg = '#C586C0' })
+vim.api.nvim_set_hl(0, 'CmpItemKindMethod', { link = 'CmpItemKindFunction' })
 -- front
-vim.api.nvim_set_hl(0, 'CmpItemKindKeyword', { bg='NONE', fg='#D4D4D4' })
-vim.api.nvim_set_hl(0, 'CmpItemKindProperty', { link='CmpItemKindKeyword' })
-vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link='CmpItemKindKeyword' })
+vim.api.nvim_set_hl(0, 'CmpItemKindKeyword', { bg = 'NONE', fg = '#D4D4D4' })
+vim.api.nvim_set_hl(0, 'CmpItemKindProperty', { link = 'CmpItemKindKeyword' })
+vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link = 'CmpItemKindKeyword' })
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -288,8 +281,8 @@ lspConfig.dartls.setup {
   capabilities = capabilities,
 }
 
--- lspConfig.eslint.setup{
---   on_attach = on_attach,
---   flags = lsp_flags,
---   capabilities = capabilities,
--- }
+lspConfig.eslint.setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+}
