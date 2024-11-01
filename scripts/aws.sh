@@ -10,17 +10,13 @@ CACHE_SSM="$CACHE_DIR/aws_ssm.cache"
 CACHE_SQS="$CACHE_DIR/aws_sqs.cache"
 
 aws_login() {
-  if [ -z $1 ]; then
-    echo "Usage: iaws login <AWS_PROFILE>"
-    exit 1
-  fi
+  opts=`echo "Dev Sandbox Stage Prod" | tr ' ' '\n'`
+  app_env=`printf "$opts" | fzf-tmux -p -w 20% -h 20% | tr '[:upper:]' '[:lower:]'`
 
-  AWS_PROFILE=$1
+  AWS_PROFILE=$app_env
   AWS_REGION=us-east-1
 
   TMUX_WINDOW_NAME="AWS ${AWS_PROFILE}"
-
-  echo $TMUX_WINDOW_NAME
 
   tmux new-window -n "$TMUX_WINDOW_NAME"
   tmux send-keys -t "$TMUX_WINDOW_NAME" "export AWS_PROFILE=$AWS_PROFILE;export AWS_REGION=$AWS_REGION" C-m
