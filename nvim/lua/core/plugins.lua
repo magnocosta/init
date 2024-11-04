@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
   use({'nvim-lualine/lualine.nvim' })
   use({'nvim-tree/nvim-tree.lua' })
 
-  use({'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}, tag = '0.1.6'  })
+  use({'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'} })
   use({'Slotos/telescope-lsp-handlers.nvim' })
   use({'nvim-treesitter/nvim-treesitter',
     run = function()
