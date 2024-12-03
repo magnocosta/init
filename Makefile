@@ -9,6 +9,7 @@ install:
 	ln -s ${SOURCE_DIR}/tmuxinator.yml ${TARGET_DIR}/.tmuxinator.yml
 	ln -s ${SOURCE_DIR}/zsh/zshrc.sh ${TARGET_DIR}/.zshrc
 	ln -s ${SOURCE_DIR}/zsh/fzf.zsh ${TARGET_DIR}/.fzf.zsh
+	ln -s ${SOURCE_DIR}/aerospace/aerospace.toml ${TARGET_DIR}/.aerospace.toml
 
 uninstall:
 	unlink ${TARGET_DIR}/.ackrc
