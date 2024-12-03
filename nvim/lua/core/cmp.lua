@@ -159,7 +159,6 @@ cmp.setup.cmdline("/", {
   },
 })
 
-
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
@@ -237,6 +236,14 @@ lspConfig.gopls.setup {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
+  settings = {
+    gopls = {
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      },
+    },
+  },
 }
 
 lspConfig.dockerls.setup {
