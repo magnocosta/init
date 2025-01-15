@@ -43,3 +43,5 @@ end
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
+vim.cmd([[set wildignore+=*/node_modules/**]])
+vim.cmd([[set wildignore+=*/coverage/**]])
