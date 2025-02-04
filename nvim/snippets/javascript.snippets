@@ -1,0 +1,33 @@
+snippet td "describe(..., () => {})"
+  describe('${1}', () => {
+    ${0}
+  });
+
+snippet ti "it(..., () => {})"
+  it('${1}', async() => {
+    ${0}
+  });
+
+snippet ts "const subject = () => {}"
+  const subject = (${1}) => {
+    return ${2}($1);
+  }
+  ${0}
+
+snippet tsa "const subject = async () => {}"
+  const subject = async (${1}) => {
+    return await ${2}($1);
+  }
+  ${0}
+
+snippet cl "console.log"
+  console.log('${1}');
+  ${0}
+
+snippet ct "console.table"
+  console.table(${1:"${2:value}"});
+  ${0}
+  
+snippet cs
+  console.log(JSON.stringify(${1}, null, 4));
+  ${0}
