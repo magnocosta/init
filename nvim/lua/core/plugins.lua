@@ -32,7 +32,6 @@ return require('packer').startup(function(use)
   use({'tpope/vim-surround'                 })
   use({'lukas-reineke/indent-blankline.nvim'})
   use({'alexghergh/nvim-tmux-navigation'    })
-  use({'akinsho/bufferline.nvim'            })
 
   -- Theme
   use({ "Mofiqul/dracula.nvim" })
