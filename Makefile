@@ -10,6 +10,7 @@ install:
 	ln -s ${SOURCE_DIR}/zsh/zshrc.sh ${TARGET_DIR}/.zshrc
 	ln -s ${SOURCE_DIR}/zsh/fzf.zsh ${TARGET_DIR}/.fzf.zsh
 	ln -s ${SOURCE_DIR}/aerospace/aerospace.toml ${TARGET_DIR}/.aerospace.toml
+	ln -s ${SOURCE_DIR}/jenkyborders/bordersrc ${TARGET_DIR}/.config/borders/bordersrc
 
 uninstall:
 	unlink ${TARGET_DIR}/.ackrc
@@ -19,3 +20,4 @@ uninstall:
 	unlink ${TARGET_DIR}/.tmuxinator.yml
 	unlink ${TARGET_DIR}/.zshrc
 	unlink ${TARGET_DIR}/.fzf.zsh
+	unlink ${TARGET_DIR}/.config/jenkyborders/bordersrc
