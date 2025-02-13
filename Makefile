@@ -11,6 +11,8 @@ install:
 	ln -s ${SOURCE_DIR}/zsh/fzf.zsh ${TARGET_DIR}/.fzf.zsh
 	ln -s ${SOURCE_DIR}/aerospace/aerospace.toml ${TARGET_DIR}/.aerospace.toml
 	ln -s ${SOURCE_DIR}/jenkyborders/bordersrc ${TARGET_DIR}/.config/borders/bordersrc
+	ln -s ${SOURCE_DIR}/sketchybar/sketchybarrc ${TARGET_DIR}/.config/sketchybar/sketchybarrc
+	ln -s ${SOURCE_DIR}/sketchybar/plugins ${TARGET_DIR}/.config/sketchybar/plugins
 
 uninstall:
 	unlink ${TARGET_DIR}/.ackrc
