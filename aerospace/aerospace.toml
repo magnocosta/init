@@ -37,8 +37,7 @@ inner.horizontal = 24
 inner.vertical =   24
 
 [mode.main.binding]
-alt-slash = 'layout tiles horizontal vertical'
-alt-comma = 'layout accordion horizontal vertical'
+alt-comma = 'layout h_tiles v_accordion'
 alt-enter = 'fullscreen'
 
 alt-h = 'focus left'
