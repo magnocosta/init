@@ -62,6 +62,9 @@ return require('packer').startup(function(use)
   use({'saadparwaiz1/cmp_luasnip'        })
   use({'jose-elias-alvarez/null-ls.nvim' })
 
+  -- IA 
+  use({'github/copilot.vim' })
+
   -- Additional language support
   -- use({'fatih/vim-go' })
   use({'hashivim/vim-terraform' })
