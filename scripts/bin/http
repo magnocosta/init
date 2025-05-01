@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source "${DOTENV_PATH}/scripts/postman.sh"
+make_http_request "$1"
