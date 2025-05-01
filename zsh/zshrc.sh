@@ -40,6 +40,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/Users/$USER/go/bin:$PATH"
 export DOTENV_PATH="/Users/$USER/.init"
+export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
 alias vim=nvim
 alias v=vim
