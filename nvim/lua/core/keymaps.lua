@@ -44,6 +44,10 @@ keymap("v", "L", "$", opts)
 
 -- Save the copy context
 keymap("x", "<leader>p", "\"_dP", opts)
+-- keymap({ "n", "v" }, "<leader>y", [["+y]])
+keymap("n", "<leader>y", [["+y]], opts)
+keymap("v", "<leader>y", [["+y]], opts)
+keymap("n", "<leader>Y", [["+Y]], opts)
 
 -- Close all buffers
 keymap("n", "<leader>bq", "<cmd>:%bd|e#<cr>", opts)
