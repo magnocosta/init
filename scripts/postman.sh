@@ -44,6 +44,11 @@ make_http_request() {
     curl_cmd+=" | jq"
   fi
 
+  if [[ "$ONLY_PRINT" == "true" ]]; then
+    echo "$curl_cmd"
+    return 0
+  fi
+
   # echo -e "\n➡️  Executing request from: $request_file\n"
   eval "$curl_cmd"
 }
