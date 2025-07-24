@@ -1,4 +1,7 @@
 require("nvim-treesitter.configs").setup({
+  indent = {
+    enable = true,
+  },
 	-- A list of parser names, or "all"
 	ensure_installed = {
 		"javascript",
