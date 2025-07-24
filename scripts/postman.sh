@@ -1,6 +1,11 @@
 #!/bin/bash
 
-make_http_request() {
+if [ $# -eq 0 ]; then
+    echo "No parameter provided. Please provide a function name."
+    exit 1
+fi
+
+function make_http_request() {
   local request_file="$1"
 
   if [ ! -f "$request_file" ]; then
@@ -53,7 +58,7 @@ make_http_request() {
   eval "$curl_cmd"
 }
 
-postman() {
+function postman() {
   local POSTMAN_PATH="${POSTMAN_PATH:-.}"
 
   find "." -type f -name "*.http" | \
@@ -73,4 +78,21 @@ postman() {
         cp {} \$new_file;
         nvim \$new_file
         )" 
+}
+
+function set_app_env() {
+  opts=`echo "Dev Sandbox Stage Prod" | tr ' ' '\n'`
+  app_env=`printf "$opts" | fzf --tmux center | tr '[:upper:]' '[:lower:]'`
+  tmux send-keys "export APP_ENV=$app_env;direnv reload" C-m
+}
+
+function postman_command() {
+  case $1 in
+    "env")
+      set_app_env "$2" ;;
+    "req")
+      postman "$2" ;;
+    *)
+      echo "Function not recognized." ;;
+  esac
 }

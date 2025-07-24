@@ -5,12 +5,6 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-function set_app_env() {
-  opts=`echo "Dev Sandbox Stage Prod" | tr ' ' '\n'`
-  app_env=`printf "$opts" | fzf --tmux center | tr '[:upper:]' '[:lower:]'`
-  tmux send-keys "export APP_ENV=$app_env;direnv reload" C-m
-}
-
 function load_ssh_keys() {
   ssh_dir="$HOME/.ssh"
   keys=("bitbucket" "github" "gitlab")
@@ -32,8 +26,6 @@ function load_ssh_keys() {
 
 function app_command() {
   case $1 in
-    "env")
-      set_app_env "$2" ;;
     "ssh")
       load_ssh_keys "$2" ;;
     *)

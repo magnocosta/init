@@ -24,7 +24,7 @@ case $1 in
     "postman")
       source ${DOTENV_PATH}/scripts/postman.sh
       shift
-      postman "$@" 
+      postman_command "$@" 
       ;;
     *)
         echo "Function not recognized." ;;
