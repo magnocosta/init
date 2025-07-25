@@ -26,6 +26,11 @@ case $1 in
       shift
       postman_command "$@" 
       ;;
+    "pomodoro")
+      source ${DOTENV_PATH}/scripts/pomodoro.sh
+      shift
+      pomodoro_command "$@" 
+      ;;
     *)
         echo "Function not recognized." ;;
 esac
