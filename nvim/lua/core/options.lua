@@ -35,6 +35,12 @@ local options = {
 	guifont = "monospace:h17", -- the font used in graphical neovim applications
 }
 
+vim.filetype.add({
+  extension = {
+    http = "bash",
+  },
+})
+
 vim.opt.shortmess:append("c")
 
 for k, v in pairs(options) do
