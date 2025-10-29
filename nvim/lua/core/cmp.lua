@@ -230,9 +230,8 @@ local lsp_flags = {
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspConfig = require('lspconfig')
 
-lspConfig.gopls.setup {
+vim.lsp.config('gopls', {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
@@ -244,27 +243,28 @@ lspConfig.gopls.setup {
       },
     },
   },
-}
+})
 
-lspConfig.dockerls.setup {
+vim.lsp.config('dockerls', {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
-}
+})
 
-lspConfig.terraformls.setup {
+vim.lsp.config('terraformls', {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
-}
+})
 
-lspConfig.phpactor.setup {
+vim.lsp.config('phpactor', {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
-}
+})
 
-lspConfig.lua_ls.setup {
+vim.lsp.config('lua_ls', {
+  filetypes = { 'lua' },
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
@@ -275,22 +275,33 @@ lspConfig.lua_ls.setup {
       }
     }
   }
-}
+})
 
-lspConfig.ts_ls.setup {
+vim.lsp.config('ts_ls', {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
-}
+})
 
-lspConfig.dartls.setup {
+vim.lsp.config('dartls', {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
-}
+})
 
-lspConfig.eslint.setup {
+vim.lsp.config('eslint', {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
-}
+})
+
+-- I am not working right now on these languages, so disable them for faster startup
+-- vim.lsp.enable('dartls')
+-- vim.lsp.enable('phpactor')
+
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('eslint')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('terraformls')
+vim.lsp.enable('dockerls')
+vim.lsp.enable('gopls')
