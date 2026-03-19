@@ -94,3 +94,21 @@ vim.keymap.set("n", "<leader>jf", function()
 end, opts)
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+vim.api.nvim_create_user_command("MRFiles", function()
+  local files = vim.fn.systemlist("git diff --name-only origin/master...HEAD")
+  local qf = {}
+
+  for _, file in ipairs(files) do
+    if file ~= "" then
+      table.insert(qf, {
+        filename = file,
+        lnum = 1,
+        col = 1,
+      })
+    end
+  end
+
+  vim.fn.setqflist(qf, "r")
+  vim.cmd("copen")
+end, {})
