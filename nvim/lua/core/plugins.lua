@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
   use({'tpope/vim-fugitive'                 })
   use({'tpope/vim-unimpaired'               })
   use({'tpope/vim-surround'                 })
+  use({'shumphrey/fugitive-gitlab.vim', requires = {'tpope/vim-fugitive'} })
   use({'lukas-reineke/indent-blankline.nvim'})
   use({'alexghergh/nvim-tmux-navigation'    })
   use({
