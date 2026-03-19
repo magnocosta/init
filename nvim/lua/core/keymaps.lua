@@ -85,9 +85,12 @@ keymap("v", "<leader>gu", ":'<,'>GBrowse!<cr>", opts)
 keymap("v", "<leader>gU", ":'<,'>GBrowse<cr>", opts)
 
 keymap("n", "<leader>gh", "<cmd>:diffget //2<cr>", opts)
-keymap("n", "<leader>gu", "<cmd>:diffget //3<cr>", opts)
+keymap("n", "<leader>gj", "<cmd>:diffget //3<cr>", opts)
 
-
-keymap("n", "<leader>jf", "<cmd>:%!jq .", opts)
+vim.keymap.set("n", "<leader>jf", function()
+  vim.cmd([[%!jq .]])
+  vim.bo.filetype = "json"
+  vim.bo.syntax = "json"
+end, opts)
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
