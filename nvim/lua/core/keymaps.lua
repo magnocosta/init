@@ -46,8 +46,8 @@ keymap("v", "L", "$", opts)
 keymap("x", "<leader>p", "\"_dP", opts)
 -- keymap({ "n", "v" }, "<leader>y", [["+y]])
 keymap("n", "<leader>y", [["+y]], opts)
-keymap("v", "<leader>y", [["+y]], opts)
 keymap("n", "<leader>Y", [["+Y]], opts)
+keymap("v", "<leader>y", [["+y]], opts)
 
 -- Close all buffers
 keymap("n", "<leader>bq", "<cmd>:%bd|e#<cr>", opts)
