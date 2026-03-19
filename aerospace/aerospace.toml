@@ -36,7 +36,7 @@ inner.horizontal = 24
 inner.vertical =   24
 
 [mode.main.binding]
-alt-comma = 'layout h_tiles h_accordion'
+alt-comma = 'layout h_tiles v_accordion'
 alt-enter = 'fullscreen'
 
 alt-h = 'focus left'
