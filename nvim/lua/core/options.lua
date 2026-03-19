@@ -51,3 +51,11 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set wildignore+=*/node_modules/**]])
 vim.cmd([[set wildignore+=*/coverage/**]])
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function() 
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+  end,
+})
