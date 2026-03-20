@@ -79,6 +79,9 @@ return require('packer').startup(function(use)
   use({'hashivim/vim-terraform' })
   use({'dart-lang/dart-vim-plugin' })
 
+  -- Obsidian
+  use({'epwalsh/obsidian.nvim', tag = '*', requires = { 'nvim-lua/plenary.nvim' }})
+
   if packer_bootstrap then
     require('packer').sync()
   end
