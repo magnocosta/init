@@ -3,7 +3,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH=/Users/$USER/.oh-my-zsh
-export EDITOR='vim'
+export ZSH_CUSTOM="$ZSH/custom"
+export EDITOR='nvim'
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
