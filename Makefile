@@ -3,7 +3,7 @@ TARGET_DIR=${DOTENV_PATH}/test
 
 install:
 	ln -s ${SOURCE_DIR}/ack/ackrc ${TARGET_DIR}/.ackrc
-	ln -s ${SOURCE_DIR}/git/gitconfig ${TARGET_DIR}/.gitconfig
+	ln -s ${SOURCE_DIR}/git ${TARGET_DIR}/.config/git
 	ln -s ${SOURCE_DIR}/nvim ${TARGET_DIR}/.config/nvim
 	ln -s ${SOURCE_DIR}/tmux/tmux.conf ${TARGET_DIR}/.tmux.conf
 	ln -s ${SOURCE_DIR}/tmuxinator.yml ${TARGET_DIR}/.tmuxinator.yml
@@ -13,6 +13,7 @@ install:
 	ln -s ${SOURCE_DIR}/jenkyborders/bordersrc ${TARGET_DIR}/.config/borders/bordersrc
 	ln -s ${SOURCE_DIR}/sketchybar/sketchybarrc ${TARGET_DIR}/.config/sketchybar/sketchybarrc
 	ln -s ${SOURCE_DIR}/sketchybar/plugins ${TARGET_DIR}/.config/sketchybar/plugins
+	ln -s ${SOURCE_DIR}/ghostty/config ${TARGET_DIR}/.config/ghostty/config
 
 uninstall:
 	unlink ${TARGET_DIR}/.ackrc
