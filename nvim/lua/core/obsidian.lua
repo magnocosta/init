@@ -8,6 +8,10 @@ obsidian.setup({
   ui = {
     enable = false,
   },
+  daily_notes = {
+    folder = "notes/diario",
+    default_tags = { "daily-notes", "diario" },
+  },
   workspaces = {
     {
       name = "personal",
