@@ -1,7 +1,8 @@
 after-login-command = []
 after-startup-command = [
   'exec-and-forget borders',
-  'exec-and-forget sketchybar'
+  'exec-and-forget sketchybar',
+  'exec-and-forget bash -c "sleep 2 && sketchybar --reload"'
 ]
 
 exec-on-workspace-change = [
