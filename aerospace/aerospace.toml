@@ -55,12 +55,14 @@ alt-shift-equal = 'resize smart +50'
 alt-g = 'workspace g'
 alt-f = 'workspace f'
 alt-b = 'workspace b'
+alt-v = 'workspace v'
 alt-r = ['reload-config', 'mode main']
 alt-tab = 'workspace-back-and-forth'
 
 alt-shift-g = 'move-node-to-workspace g'
 alt-shift-f = 'move-node-to-workspace f'
 alt-shift-b = 'move-node-to-workspace b'
+alt-shift-v = 'move-node-to-workspace v'
 
 alt-shift-semicolon = 'mode service'
 
@@ -75,19 +77,26 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+## Work Focus
 [[on-window-detected]]
-if.app-id = 'com.googlecode.iterm2'
+if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace g' 
 
+## Work app
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace g' 
+run = 'move-node-to-workspace b' 
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 if.window-title-regex-substring = '.* - Google Chrome - Magno \(Work\)$'
-run = 'move-node-to-workspace g' 
+run = 'move-node-to-workspace b' 
 
+[[on-window-detected]]
+if.app-id = 'com.linear'
+run = 'move-node-to-workspace b' 
+
+## Personal
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 if.window-title-regex-substring = '.* - Google Chrome - Magno$'
@@ -102,6 +111,16 @@ run = 'move-node-to-workspace f'
 if.app-id = 'com.todoist.mac.Todoist'
 run = 'move-node-to-workspace f' 
 
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace f' 
+
+## Transient
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+run = 'move-node-to-workspace v' 
+
+## Floating
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = 'layout floating' 
