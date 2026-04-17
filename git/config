@@ -1,9 +1,0 @@
-[credential]
-	helper = store
-[user]
-	email = magnocosta.br@gmail.com
-	name = Magno Costa
-[push]
-	autoSetupRemote = true
-[includeif "gitdir:~/dev/projects/route/"]
-  path = ~/dev/projects/route/gitconfig
