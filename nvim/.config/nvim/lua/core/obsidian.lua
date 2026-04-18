@@ -15,7 +15,7 @@ obsidian.setup({
   workspaces = {
     {
       name = "personal",
-      path = "~/dev/tools/obsidian/my-vault",
+      path = "~/Work/tools/obsidian/my-vault",
     }
   },
 })
