@@ -31,7 +31,7 @@ start_app() {
   name=$(sanitizeString "$name")
 
   session="$parent -> $name"
-  tmuxinator s -n "$session" -p ~/.tmuxinator.yml
+  tmuxinator s -n "$session" -p $XDG_CONFIG_HOME/tmuxinator/tmuxinator.yml
 }
 
 attach_session() {
