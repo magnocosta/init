@@ -1,4 +1,4 @@
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_DEFAULT_OPTS='--height 41% --layout=reverse --border'
 export FZF_COMPLETION_TRIGGER='**'
 export FZF_CTRL_T_OPTS="
  --walker-skip .git,node_modules,target
@@ -9,6 +9,9 @@ export FZF_CTRL_T_OPTS="
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
   PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
 fi
+
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+alias eff='$EDITOR "$(ff)"'
 
 # source "/usr/local/opt/fzf/shell/completion.zsh"
 # source "/usr/local/opt/fzf/shell/key-bindings.zsh"

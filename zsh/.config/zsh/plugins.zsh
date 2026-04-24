@@ -1,0 +1,10 @@
+plugins=(
+  git
+  history
+  macos
+  sprunge
+  colored-man-pages
+  direnv
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
