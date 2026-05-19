@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
     end,
   })
   -- Theme
-  use({ "Mofiqul/dracula.nvim" })
+  use({ 'Mofiqul/dracula.nvim' })
 
   use({'nvim-lualine/lualine.nvim' })
   use({'nvim-tree/nvim-tree.lua' })
@@ -51,7 +51,7 @@ return require('packer').startup(function(use)
   use({'Slotos/telescope-lsp-handlers.nvim' })
   use({'nvim-treesitter/nvim-treesitter',
     run = function()
-      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
       ts_update()
     end,
   })
@@ -72,12 +72,14 @@ return require('packer').startup(function(use)
 
   -- IA 
   use({'github/copilot.vim' })
-  use({'olimorris/codecompanion.nvim', requires = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" }})
+  use({'olimorris/codecompanion.nvim', requires = { 'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter' }})
 
   -- Additional language support
   -- use({'fatih/vim-go' })
   use({'hashivim/vim-terraform' })
   use({'dart-lang/dart-vim-plugin' })
+
+  use({'mason-org/mason-lspconfig.nvim', requires = { 'mason-org/mason.nvim' }})
 
   -- Obsidian
   use({'epwalsh/obsidian.nvim', tag = '*', requires = { 'nvim-lua/plenary.nvim' }})
