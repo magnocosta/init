@@ -295,6 +295,12 @@ vim.lsp.config('eslint', {
   capabilities = capabilities,
 })
 
+vim.lsp.config('ruby_lsp', {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+})
+
 -- I am not working right now on these languages, so disable them for faster startup
 -- vim.lsp.enable('dartls')
 -- vim.lsp.enable('phpactor')
@@ -305,3 +311,4 @@ vim.lsp.enable('ts_ls')
 vim.lsp.enable('terraformls')
 vim.lsp.enable('dockerls')
 vim.lsp.enable('gopls')
+vim.lsp.enable('ruby_lsp')
