@@ -1,3 +1,7 @@
+if command -v fzf &> /dev/null; then
+  eval "$(fzf --zsh)"
+fi
+
 export FZF_DEFAULT_OPTS='--height 41% --layout=reverse --border'
 export FZF_COMPLETION_TRIGGER='**'
 export FZF_CTRL_T_OPTS="

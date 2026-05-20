@@ -18,9 +18,6 @@ source "$ZSH_CONFIG_DIR/apps/nvm.zsh"
 source "$ZSH_CONFIG_DIR/apps/rvm.zsh"
 source "$ZSH_CONFIG_DIR/apps/zoxide.zsh"
 
-if command -v fzf &> /dev/null; then
-  eval "$(fzf --zsh)"
-fi
 
 eval "$(starship init zsh)"
 if command -v starship &> /dev/null; then
