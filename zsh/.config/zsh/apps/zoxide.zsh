@@ -1,4 +1,5 @@
 if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh)"
   alias cd="zd"
   zd() {
     if (( $# == 0 )); then
