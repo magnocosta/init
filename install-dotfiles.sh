@@ -1,7 +1,7 @@
 #!/bin/bash
 
 is_stow_installed() {
-  pacman -Qi "stow" &> /dev/null
+  command -v stow &> /dev/null
 }
 
 if ! is_stow_installed; then
@@ -16,6 +16,7 @@ rm -rf \
   ~/.config/borders \
   ~/.config/git \
   ~/.config/nvim \
+  ~/.config/starship.toml \
   ~/.config/tmux \
   ~/.config/tmuxinator \
   ~/.config/zsh \
@@ -27,6 +28,7 @@ stow jankyborders
 stow git
 stow nvim
 stow ghostty
+stow starship
 stow tmux
 stow tmuxinator
 stow zsh
