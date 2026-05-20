@@ -20,4 +20,5 @@ brew "bat"
 brew "logcli"
 brew "eza"
 brew "stow"
+brew "starship"
 
