@@ -3,7 +3,7 @@ bindkey '\e[H'    beginning-of-line
 bindkey '\e[F'    end-of-line
 
 # Base path
-ZSH_CONFIG_DIR="$XDG_CONFIG_HOME/zsh"
+ZSH_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 # Load modular files
 source "$ZSH_CONFIG_DIR/exports.zsh"
