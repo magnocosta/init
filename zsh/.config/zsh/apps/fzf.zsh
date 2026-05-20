@@ -16,6 +16,3 @@ fi
 
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias eff='$EDITOR "$(ff)"'
-
-# source "/usr/local/opt/fzf/shell/completion.zsh"
-# source "/usr/local/opt/fzf/shell/key-bindings.zsh"
