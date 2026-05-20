@@ -17,11 +17,3 @@ source "$ZSH_CONFIG_DIR/apps/go.zsh"
 source "$ZSH_CONFIG_DIR/apps/nvm.zsh"
 source "$ZSH_CONFIG_DIR/apps/rvm.zsh"
 source "$ZSH_CONFIG_DIR/apps/zoxide.zsh"
-
-
-eval "$(starship init zsh)"
-if command -v starship &> /dev/null; then
-  eval "$(starship init zsh)"
-fi
-
-
