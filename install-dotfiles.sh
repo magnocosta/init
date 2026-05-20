@@ -12,6 +12,7 @@ fi
 echo "Removing old configs"
 rm -rf \
   ~/.config/ack \
+  ~/.config/aerospace \
   ~/.config/git \
   ~/.config/nvim \
   ~/.config/tmux \
@@ -20,6 +21,7 @@ rm -rf \
   ~/.config/ghostty
 
 stow ack
+stow aerospace
 stow git
 stow nvim
 stow ghostty
