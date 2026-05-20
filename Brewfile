@@ -19,3 +19,5 @@ brew "libpq"
 brew "bat"
 brew "logcli"
 brew "eza"
+brew "stow"
+
