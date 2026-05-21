@@ -5,5 +5,7 @@
 	name = Magno Costa
 [push]
 	autoSetupRemote = true
-[includeif "gitdir:~/dev/projects/route/"]
-  path = ~/dev/projects/route/gitconfig
+[alias]
+	lg = !git log --format='%C(yellow)%h%C(reset) - %C(green)(%ar)%C(reset) - %C(blue)<%an>%C(reset) -> %s'
+[includeif "gitdir:~/Work/route/"]
+  path = ~/Work/route/gitconfig

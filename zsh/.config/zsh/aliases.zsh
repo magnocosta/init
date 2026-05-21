@@ -4,6 +4,7 @@ alias bruce="${DOTENV_PATH}/scripts/bin/bruce"
 alias s="bruce tmux app"
 alias a="bruce tmux attach"
 alias b="bruce"
+alias g="git"
 alias ia="claude"
 
 alias vim=nvim
