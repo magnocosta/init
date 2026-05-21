@@ -3,6 +3,6 @@ tags
 *.log
 cache/
 nvim/plugin/packer_compiled.lua
-zsh/.config/zsh/.zcompdump
+zsh/.config/zsh/.zcompdump*
 zsh/.config/zsh/.zsh_history
 nvim/.config/nvim/plugin
