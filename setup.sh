@@ -4,10 +4,22 @@ is_stow_installed() {
   command -v stow &> /dev/null
 }
 
+install_tpm() {
+  local tpm_path="${XDG_DATA_HOME:-$HOME/.local/share}/tmux/plugins/tpm"
+  if [ ! -d "$tpm_path" ]; then
+    echo "Installing TPM..."
+    git clone https://github.com/tmux-plugins/tpm "$tpm_path"
+  else
+    echo "TPM already installed, skipping"
+  fi
+}
+
 if ! is_stow_installed; then
   echo "Install stow first"
   exit 1
 fi
+
+install_tpm
 
 echo "Removing old configs"
 rm -rf \
