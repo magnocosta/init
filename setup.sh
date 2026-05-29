@@ -44,5 +44,6 @@ stow starship
 stow tmux
 stow tmuxinator
 stow zsh
+stow hypr
 
 echo "Dotfiles configured"
