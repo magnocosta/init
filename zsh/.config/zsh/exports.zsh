@@ -1,3 +1,8 @@
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_SPACE
+
 export EDITOR='nvim'
 export DOTENV_PATH="$HOME/.init"
 export POSTMAN_PATH="$HOME/Work/tools/postman"
