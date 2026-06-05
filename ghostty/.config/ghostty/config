@@ -20,3 +20,5 @@ cursor-style-blink = false
 
 # Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
 async-backend = epoll
+# Allow to use special chars in the terminal without scapes
+macos-option-as-alt = false
